@@ -1,0 +1,1630 @@
+module Data exposing (Datum, stateData)
+
+
+type alias Datum =
+    { state : String
+    , year : Float
+    , sunlight : Float
+    , precipitation : Float
+    }
+
+
+stateData : List Datum
+stateData =
+  [ Datum "Alabama" 1980 17232.580000 4.080000
+  , Datum "Alabama" 1981 17142.840000 3.190000
+  , Datum "Alabama" 1982 16128.180000 4.220000
+  , Datum "Alabama" 1983 16615.460000 4.800000
+  , Datum "Alabama" 1984 16836.320000 3.490000
+  , Datum "Alabama" 1985 16104.270000 3.550000
+  , Datum "Alabama" 1986 16656.390000 3.260000
+  , Datum "Alabama" 1987 16651.980000 3.350000
+  , Datum "Alabama" 1988 16924.330000 3.570000
+  , Datum "Alabama" 1989 16058.500000 4.470000
+  , Datum "Alabama" 1990 17167.060000 3.840000
+  , Datum "Alabama" 1991 15778.270000 4.380000
+  , Datum "Alabama" 1992 16505.400000 4.140000
+  , Datum "Alabama" 1993 16477.070000 3.450000
+  , Datum "Alabama" 1994 16366.610000 4.140000
+  , Datum "Alabama" 1995 17204.030000 4.030000
+  , Datum "Alabama" 1996 16943.560000 3.840000
+  , Datum "Alabama" 1997 16335.750000 4.270000
+  , Datum "Alabama" 1998 17181.120000 3.870000
+  , Datum "Alabama" 1999 17616.900000 3.350000
+  , Datum "Alabama" 2000 17887.600000 2.700000
+  , Datum "Alabama" 2001 16980.490000 3.880000
+  , Datum "Alabama" 2002 16721.730000 3.870000
+  , Datum "Alabama" 2003 17057.420000 4.120000
+  , Datum "Alabama" 2004 16983.040000 3.890000
+  , Datum "Alabama" 2005 17207.210000 3.790000
+  , Datum "Alabama" 2006 17798.040000 3.250000
+  , Datum "Alabama" 2007 17761.610000 2.430000
+  , Datum "Alabama" 2008 17567.240000 3.860000
+  , Datum "Alabama" 2009 17040.860000 5.080000
+  , Datum "Alabama" 2010 17564.430000 3.290000
+  , Datum "Alabama" 2011 18232.390000 3.470000
+  , Datum "Arizona" 1979 19703.580000 0.880000
+  , Datum "Arizona" 1980 19551.510000 0.950000
+  , Datum "Arizona" 1981 19530.960000 0.870000
+  , Datum "Arizona" 1982 19194.600000 1.130000
+  , Datum "Arizona" 1983 19122.360000 1.260000
+  , Datum "Arizona" 1984 19394.710000 1.080000
+  , Datum "Arizona" 1985 19344.840000 0.960000
+  , Datum "Arizona" 1986 19264.960000 0.970000
+  , Datum "Arizona" 1987 19517.050000 0.930000
+  , Datum "Arizona" 1988 19666.820000 0.870000
+  , Datum "Arizona" 1989 20024.280000 0.530000
+  , Datum "Arizona" 1990 19301.200000 0.970000
+  , Datum "Arizona" 1991 19518.080000 0.900000
+  , Datum "Arizona" 1992 19351.860000 1.270000
+  , Datum "Arizona" 1993 19572.740000 1.120000
+  , Datum "Arizona" 1994 19443.170000 0.850000
+  , Datum "Arizona" 1995 19631.620000 0.800000
+  , Datum "Arizona" 1996 19832.880000 0.570000
+  , Datum "Arizona" 1997 19596.000000 0.820000
+  , Datum "Arizona" 1998 19431.350000 0.920000
+  , Datum "Arizona" 1999 19732.300000 0.630000
+  , Datum "Arizona" 2000 19655.510000 0.690000
+  , Datum "Arizona" 2001 19515.930000 0.670000
+  , Datum "Arizona" 2002 20036.290000 0.450000
+  , Datum "Arizona" 2003 19844.220000 0.710000
+  , Datum "Arizona" 2004 19764.140000 0.950000
+  , Datum "Arizona" 2005 19624.620000 0.950000
+  , Datum "Arizona" 2006 19718.570000 0.740000
+  , Datum "Arizona" 2007 19804.180000 0.850000
+  , Datum "Arizona" 2008 19917.070000 0.900000
+  , Datum "Arizona" 2009 20050.260000 0.530000
+  , Datum "Arizona" 2010 19828.400000 1.020000
+  , Datum "Arizona" 2011 20156.430000 0.670000
+  , Datum "Arkansas" 1979 16565.820000 4.130000
+  , Datum "Arkansas" 1980 17431.440000 2.720000
+  , Datum "Arkansas" 1981 16360.080000 2.950000
+  , Datum "Arkansas" 1982 16208.550000 3.880000
+  , Datum "Arkansas" 1983 16214.320000 3.170000
+  , Datum "Arkansas" 1984 16172.480000 4.140000
+  , Datum "Arkansas" 1985 16307.580000 3.260000
+  , Datum "Arkansas" 1986 16388.340000 3.150000
+  , Datum "Arkansas" 1987 16064.350000 3.630000
+  , Datum "Arkansas" 1988 16678.900000 3.170000
+  , Datum "Arkansas" 1989 15752.630000 3.520000
+  , Datum "Arkansas" 1990 16315.400000 4.610000
+  , Datum "Arkansas" 1991 15858.480000 4.200000
+  , Datum "Arkansas" 1992 16146.230000 3.220000
+  , Datum "Arkansas" 1993 15954.850000 3.500000
+  , Datum "Arkansas" 1994 16110.100000 3.660000
+  , Datum "Arkansas" 1995 16266.420000 2.980000
+  , Datum "Arkansas" 1996 16167.840000 3.520000
+  , Datum "Arkansas" 1997 16019.290000 3.460000
+  , Datum "Arkansas" 1998 16708.790000 3.250000
+  , Datum "Arkansas" 1999 17244.440000 2.850000
+  , Datum "Arkansas" 2000 16931.970000 2.910000
+  , Datum "Arkansas" 2001 16416.070000 3.620000
+  , Datum "Arkansas" 2002 15925.980000 3.620000
+  , Datum "Arkansas" 2003 16660.250000 3.070000
+  , Datum "Arkansas" 2004 16517.610000 3.900000
+  , Datum "Arkansas" 2005 17243.830000 2.480000
+  , Datum "Arkansas" 2006 17327.610000 3.420000
+  , Datum "Arkansas" 2007 16681.820000 3.190000
+  , Datum "Arkansas" 2008 17031.890000 4.170000
+  , Datum "Arkansas" 2009 16475.660000 5.000000
+  , Datum "Arkansas" 2010 16847.160000 2.740000
+  , Datum "Arkansas" 2011 17455.780000 3.770000
+  , Datum "California" 1979 19405.470000 1.720000
+  , Datum "California" 1980 19261.980000 1.650000
+  , Datum "California" 1981 19104.630000 1.860000
+  , Datum "California" 1982 18761.210000 2.180000
+  , Datum "California" 1983 18415.010000 3.030000
+  , Datum "California" 1984 19051.140000 1.270000
+  , Datum "California" 1985 19359.190000 1.010000
+  , Datum "California" 1986 19359.020000 1.700000
+  , Datum "California" 1987 19442.310000 1.350000
+  , Datum "California" 1988 19463.320000 1.190000
+  , Datum "California" 1989 19526.820000 1.040000
+  , Datum "California" 1990 19504.240000 0.970000
+  , Datum "California" 1991 19423.800000 1.370000
+  , Datum "California" 1992 19292.850000 1.630000
+  , Datum "California" 1993 19048.570000 1.860000
+  , Datum "California" 1994 19318.450000 1.220000
+  , Datum "California" 1995 18982.300000 2.430000
+  , Datum "California" 1996 19062.190000 2.090000
+  , Datum "California" 1997 19345.570000 1.290000
+  , Datum "California" 1998 18535.990000 2.390000
+  , Datum "California" 1999 19325.020000 1.190000
+  , Datum "California" 2000 19138.070000 1.400000
+  , Datum "California" 2001 19332.970000 1.540000
+  , Datum "California" 2002 19678.210000 1.310000
+  , Datum "California" 2003 19342.630000 1.480000
+  , Datum "California" 2004 19791.890000 1.480000
+  , Datum "California" 2005 19181.270000 2.110000
+  , Datum "California" 2006 19195.910000 1.640000
+  , Datum "California" 2007 19698.040000 0.990000
+  , Datum "California" 2008 19842.650000 1.230000
+  , Datum "California" 2009 19663.690000 1.220000
+  , Datum "California" 2010 19255.820000 2.140000
+  , Datum "California" 2011 19438.550000 1.300000
+  , Datum "Colorado" 1979 17555.390000 1.310000
+  , Datum "Colorado" 1980 17542.520000 1.220000
+  , Datum "Colorado" 1981 17293.970000 1.290000
+  , Datum "Colorado" 1982 17266.550000 1.320000
+  , Datum "Colorado" 1983 17178.340000 1.500000
+  , Datum "Colorado" 1984 17273.860000 1.380000
+  , Datum "Colorado" 1985 17409.380000 1.400000
+  , Datum "Colorado" 1986 17286.630000 1.340000
+  , Datum "Colorado" 1987 17425.640000 1.280000
+  , Datum "Colorado" 1988 17476.970000 1.120000
+  , Datum "Colorado" 1989 17492.710000 1.000000
+  , Datum "Colorado" 1990 17280.520000 1.350000
+  , Datum "Colorado" 1991 17377.700000 1.270000
+  , Datum "Colorado" 1992 17343.760000 1.290000
+  , Datum "Colorado" 1993 17255.390000 1.360000
+  , Datum "Colorado" 1994 17468.170000 1.180000
+  , Datum "Colorado" 1995 17154.840000 1.530000
+  , Datum "Colorado" 1996 17425.490000 1.390000
+  , Datum "Colorado" 1997 17216.320000 1.530000
+  , Datum "Colorado" 1998 17371.970000 1.310000
+  , Datum "Colorado" 1999 17402.350000 1.370000
+  , Datum "Colorado" 2000 17442.650000 1.220000
+  , Datum "Colorado" 2001 17530.780000 1.190000
+  , Datum "Colorado" 2002 17674.940000 0.880000
+  , Datum "Colorado" 2003 17427.490000 1.260000
+  , Datum "Colorado" 2004 17271.820000 1.430000
+  , Datum "Colorado" 2005 17341.290000 1.400000
+  , Datum "Colorado" 2006 17476.560000 1.370000
+  , Datum "Colorado" 2007 17497.510000 1.360000
+  , Datum "Colorado" 2008 17440.660000 1.170000
+  , Datum "Colorado" 2009 17176.050000 1.320000
+  , Datum "Colorado" 2010 17480.960000 1.280000
+  , Datum "Colorado" 2011 17553.460000 1.220000
+  , Datum "Connecticut" 1979 14503.750000 4.050000
+  , Datum "Connecticut" 1980 14977.960000 2.840000
+  , Datum "Connecticut" 1981 14541.350000 3.020000
+  , Datum "Connecticut" 1982 14861.610000 3.260000
+  , Datum "Connecticut" 1983 14901.680000 4.560000
+  , Datum "Connecticut" 1984 14196.380000 3.640000
+  , Datum "Connecticut" 1985 14559.170000 2.980000
+  , Datum "Connecticut" 1986 14675.080000 3.290000
+  , Datum "Connecticut" 1987 14682.590000 3.160000
+  , Datum "Connecticut" 1988 15280.140000 3.020000
+  , Datum "Connecticut" 1989 14445.060000 4.110000
+  , Datum "Connecticut" 1990 14811.960000 3.870000
+  , Datum "Connecticut" 1991 15184.890000 3.340000
+  , Datum "Connecticut" 1992 14705.370000 3.390000
+  , Datum "Connecticut" 1993 14910.710000 3.090000
+  , Datum "Connecticut" 1994 14974.490000 3.470000
+  , Datum "Connecticut" 1995 14768.460000 2.850000
+  , Datum "Connecticut" 1996 14390.600000 4.160000
+  , Datum "Connecticut" 1997 14849.360000 2.860000
+  , Datum "Connecticut" 1998 14817.120000 3.260000
+  , Datum "Connecticut" 1999 15447.920000 2.960000
+  , Datum "Connecticut" 2000 14490.930000 2.990000
+  , Datum "Connecticut" 2001 15479.870000 2.340000
+  , Datum "Connecticut" 2002 15095.250000 3.010000
+  , Datum "Connecticut" 2003 14482.830000 3.820000
+  , Datum "Connecticut" 2004 14955.210000 3.390000
+  , Datum "Connecticut" 2005 15245.650000 3.890000
+  , Datum "Connecticut" 2006 14983.900000 4.050000
+  , Datum "Connecticut" 2007 15452.600000 3.110000
+  , Datum "Connecticut" 2008 15405.130000 4.190000
+  , Datum "Connecticut" 2009 14738.400000 3.500000
+  , Datum "Connecticut" 2010 15440.770000 3.410000
+  , Datum "Connecticut" 2011 15311.680000 4.600000
+  , Datum "Delaware" 1979 15144.900000 3.890000
+  , Datum "Delaware" 1980 15915.450000 2.700000
+  , Datum "Delaware" 1981 15335.460000 2.600000
+  , Datum "Delaware" 1982 15655.370000 2.800000
+  , Datum "Delaware" 1983 15818.610000 3.800000
+  , Datum "Delaware" 1984 15187.480000 3.080000
+  , Datum "Delaware" 1985 15387.990000 2.740000
+  , Datum "Delaware" 1986 15551.630000 2.610000
+  , Datum "Delaware" 1987 15426.990000 2.500000
+  , Datum "Delaware" 1988 16414.290000 2.720000
+  , Datum "Delaware" 1989 15325.720000 3.930000
+  , Datum "Delaware" 1990 15644.720000 3.110000
+  , Datum "Delaware" 1991 15871.240000 2.860000
+  , Datum "Delaware" 1992 15165.160000 2.860000
+  , Datum "Delaware" 1993 15503.560000 3.130000
+  , Datum "Delaware" 1994 15803.470000 3.370000
+  , Datum "Delaware" 1995 15827.470000 2.700000
+  , Datum "Delaware" 1996 15400.390000 4.030000
+  , Datum "Delaware" 1997 15628.740000 2.780000
+  , Datum "Delaware" 1998 15478.000000 2.890000
+  , Datum "Delaware" 1999 16316.440000 3.200000
+  , Datum "Delaware" 2000 15857.150000 3.130000
+  , Datum "Delaware" 2001 16248.910000 2.630000
+  , Datum "Delaware" 2002 16084.560000 3.120000
+  , Datum "Delaware" 2003 15231.170000 4.170000
+  , Datum "Delaware" 2004 15792.700000 3.120000
+  , Datum "Delaware" 2005 15849.280000 3.190000
+  , Datum "Delaware" 2006 16557.770000 3.210000
+  , Datum "Delaware" 2007 16249.630000 2.480000
+  , Datum "Delaware" 2008 16537.230000 2.890000
+  , Datum "Delaware" 2009 15354.570000 3.830000
+  , Datum "Delaware" 2010 16394.380000 2.810000
+  , Datum "Delaware" 2011 16458.570000 3.300000
+  , Datum "District of Columbia" 1979 14467.810000 4.000000
+  , Datum "District of Columbia" 1980 15553.830000 2.460000
+  , Datum "District of Columbia" 1981 14874.290000 2.340000
+  , Datum "District of Columbia" 1982 15085.950000 2.690000
+  , Datum "District of Columbia" 1983 15284.840000 3.780000
+  , Datum "District of Columbia" 1984 14616.350000 2.850000
+  , Datum "District of Columbia" 1985 14833.050000 2.580000
+  , Datum "District of Columbia" 1986 15107.490000 2.510000
+  , Datum "District of Columbia" 1987 15143.890000 2.700000
+  , Datum "District of Columbia" 1988 15874.210000 2.530000
+  , Datum "District of Columbia" 1989 14556.040000 3.500000
+  , Datum "District of Columbia" 1990 15229.230000 3.350000
+  , Datum "District of Columbia" 1991 15263.410000 2.390000
+  , Datum "District of Columbia" 1992 14670.210000 2.940000
+  , Datum "District of Columbia" 1993 15219.620000 3.330000
+  , Datum "District of Columbia" 1994 15284.850000 2.990000
+  , Datum "District of Columbia" 1995 15265.790000 2.790000
+  , Datum "District of Columbia" 1996 14844.370000 4.160000
+  , Datum "District of Columbia" 1997 15231.600000 2.680000
+  , Datum "District of Columbia" 1998 15074.010000 2.840000
+  , Datum "District of Columbia" 1999 16121.780000 2.940000
+  , Datum "District of Columbia" 2000 15317.090000 2.710000
+  , Datum "District of Columbia" 2001 15784.440000 2.410000
+  , Datum "District of Columbia" 2002 15462.660000 2.910000
+  , Datum "District of Columbia" 2003 14743.680000 4.480000
+  , Datum "District of Columbia" 2004 15040.300000 2.770000
+  , Datum "District of Columbia" 2005 15367.960000 3.200000
+  , Datum "District of Columbia" 2006 15844.490000 3.250000
+  , Datum "District of Columbia" 2007 16035.780000 2.380000
+  , Datum "District of Columbia" 2008 15993.860000 3.330000
+  , Datum "District of Columbia" 2009 14752.000000 3.520000
+  , Datum "District of Columbia" 2010 16111.070000 2.930000
+  , Datum "District of Columbia" 2011 15701.400000 3.410000
+  , Datum "Florida" 1979 18467.110000 4.090000
+  , Datum "Florida" 1980 18851.670000 3.400000
+  , Datum "Florida" 1981 19000.840000 3.030000
+  , Datum "Florida" 1982 17670.760000 4.170000
+  , Datum "Florida" 1983 18197.980000 4.570000
+  , Datum "Florida" 1984 18792.930000 3.320000
+  , Datum "Florida" 1985 18186.740000 3.610000
+  , Datum "Florida" 1986 18076.910000 3.600000
+  , Datum "Florida" 1987 18055.710000 3.620000
+  , Datum "Florida" 1988 18207.560000 3.650000
+  , Datum "Florida" 1989 18296.540000 3.410000
+  , Datum "Florida" 1990 18619.660000 2.970000
+  , Datum "Florida" 1991 17524.210000 4.360000
+  , Datum "Florida" 1992 18108.460000 3.930000
+  , Datum "Florida" 1993 18415.800000 3.450000
+  , Datum "Florida" 1994 17725.350000 4.510000
+  , Datum "Florida" 1995 18121.800000 3.980000
+  , Datum "Florida" 1996 18800.940000 3.730000
+  , Datum "Florida" 1997 17744.970000 4.080000
+  , Datum "Florida" 1998 19179.090000 3.800000
+  , Datum "Florida" 1999 18963.940000 3.410000
+  , Datum "Florida" 2000 19391.910000 2.610000
+  , Datum "Florida" 2001 18398.600000 3.340000
+  , Datum "Florida" 2002 17913.100000 4.050000
+  , Datum "Florida" 2003 18754.060000 3.960000
+  , Datum "Florida" 2004 18928.720000 3.870000
+  , Datum "Florida" 2005 18986.520000 4.320000
+  , Datum "Florida" 2006 19592.330000 2.940000
+  , Datum "Florida" 2007 18945.540000 3.090000
+  , Datum "Florida" 2008 19289.680000 3.840000
+  , Datum "Florida" 2009 18870.380000 3.790000
+  , Datum "Florida" 2010 19418.700000 3.310000
+  , Datum "Florida" 2011 19700.780000 3.210000
+  , Datum "Georgia" 1979 17118.610000 3.870000
+  , Datum "Georgia" 1980 17553.550000 3.240000
+  , Datum "Georgia" 1981 17630.130000 2.950000
+  , Datum "Georgia" 1982 16315.850000 3.640000
+  , Datum "Georgia" 1983 17066.730000 3.950000
+  , Datum "Georgia" 1984 17414.620000 3.260000
+  , Datum "Georgia" 1985 16848.210000 3.260000
+  , Datum "Georgia" 1986 16834.690000 2.920000
+  , Datum "Georgia" 1987 17023.690000 3.080000
+  , Datum "Georgia" 1988 17366.860000 3.030000
+  , Datum "Georgia" 1989 16510.460000 3.850000
+  , Datum "Georgia" 1990 17487.450000 3.070000
+  , Datum "Georgia" 1991 16306.010000 3.970000
+  , Datum "Georgia" 1992 16639.350000 4.050000
+  , Datum "Georgia" 1993 17089.660000 3.170000
+  , Datum "Georgia" 1994 16752.040000 4.200000
+  , Datum "Georgia" 1995 17183.880000 3.420000
+  , Datum "Georgia" 1996 17251.960000 3.310000
+  , Datum "Georgia" 1997 16633.510000 3.940000
+  , Datum "Georgia" 1998 17614.170000 3.590000
+  , Datum "Georgia" 1999 18063.320000 2.860000
+  , Datum "Georgia" 2000 17873.890000 2.830000
+  , Datum "Georgia" 2001 17333.310000 2.900000
+  , Datum "Georgia" 2002 16974.100000 3.500000
+  , Datum "Georgia" 2003 17195.100000 3.890000
+  , Datum "Georgia" 2004 17261.040000 3.540000
+  , Datum "Georgia" 2005 17443.550000 3.790000
+  , Datum "Georgia" 2006 17879.340000 2.840000
+  , Datum "Georgia" 2007 18231.500000 2.470000
+  , Datum "Georgia" 2008 17908.820000 3.280000
+  , Datum "Georgia" 2009 17283.390000 4.330000
+  , Datum "Georgia" 2010 17939.080000 3.030000
+  , Datum "Georgia" 2011 18574.370000 2.770000
+  , Datum "Idaho" 1979 16263.670000 1.410000
+  , Datum "Idaho" 1980 15702.850000 2.060000
+  , Datum "Idaho" 1981 15859.050000 1.890000
+  , Datum "Idaho" 1982 15662.360000 2.150000
+  , Datum "Idaho" 1983 15573.680000 2.270000
+  , Datum "Idaho" 1984 15494.770000 1.870000
+  , Datum "Idaho" 1985 16280.480000 1.430000
+  , Datum "Idaho" 1986 16016.440000 1.800000
+  , Datum "Idaho" 1987 16314.570000 1.330000
+  , Datum "Idaho" 1988 16249.240000 1.440000
+  , Datum "Idaho" 1989 15888.370000 1.500000
+  , Datum "Idaho" 1990 15857.480000 1.630000
+  , Datum "Idaho" 1991 15901.510000 1.600000
+  , Datum "Idaho" 1992 16248.020000 1.270000
+  , Datum "Idaho" 1993 15783.330000 1.610000
+  , Datum "Idaho" 1994 16145.950000 1.340000
+  , Datum "Idaho" 1995 15686.330000 2.160000
+  , Datum "Idaho" 1996 15798.840000 2.230000
+  , Datum "Idaho" 1997 15717.480000 1.740000
+  , Datum "Idaho" 1998 15773.980000 2.000000
+  , Datum "Idaho" 1999 16060.910000 1.420000
+  , Datum "Idaho" 2000 16114.690000 1.430000
+  , Datum "Idaho" 2001 16161.220000 1.330000
+  , Datum "Idaho" 2002 16074.420000 1.340000
+  , Datum "Idaho" 2003 15968.890000 1.620000
+  , Datum "Idaho" 2004 15958.080000 1.660000
+  , Datum "Idaho" 2005 15900.890000 1.790000
+  , Datum "Idaho" 2006 16308.430000 1.880000
+  , Datum "Idaho" 2007 16188.470000 1.350000
+  , Datum "Idaho" 2008 16017.100000 1.510000
+  , Datum "Idaho" 2009 16014.680000 1.640000
+  , Datum "Idaho" 2010 15833.570000 1.880000
+  , Datum "Idaho" 2011 15799.460000 1.770000
+  , Datum "Illinois" 1979 15244.550000 2.610000
+  , Datum "Illinois" 1980 15279.700000 2.320000
+  , Datum "Illinois" 1981 14883.400000 2.880000
+  , Datum "Illinois" 1982 14841.650000 3.200000
+  , Datum "Illinois" 1983 14712.720000 2.830000
+  , Datum "Illinois" 1984 14695.020000 2.850000
+  , Datum "Illinois" 1985 14650.440000 3.080000
+  , Datum "Illinois" 1986 15035.700000 2.550000
+  , Datum "Illinois" 1987 14886.860000 2.370000
+  , Datum "Illinois" 1988 15974.370000 2.020000
+  , Datum "Illinois" 1989 14822.950000 2.210000
+  , Datum "Illinois" 1990 14762.580000 3.430000
+  , Datum "Illinois" 1991 14726.740000 2.500000
+  , Datum "Illinois" 1992 14453.040000 2.520000
+  , Datum "Illinois" 1993 14135.020000 3.550000
+  , Datum "Illinois" 1994 15114.940000 2.470000
+  , Datum "Illinois" 1995 14717.640000 2.740000
+  , Datum "Illinois" 1996 14800.310000 2.650000
+  , Datum "Illinois" 1997 14650.700000 2.440000
+  , Datum "Illinois" 1998 14730.930000 3.090000
+  , Datum "Illinois" 1999 15465.770000 2.580000
+  , Datum "Illinois" 2000 15072.490000 2.650000
+  , Datum "Illinois" 2001 15051.920000 2.720000
+  , Datum "Illinois" 2002 14934.080000 2.760000
+  , Datum "Illinois" 2003 15409.890000 2.680000
+  , Datum "Illinois" 2004 15107.190000 2.780000
+  , Datum "Illinois" 2005 15406.260000 2.240000
+  , Datum "Illinois" 2006 15224.960000 2.860000
+  , Datum "Illinois" 2007 15591.870000 2.560000
+  , Datum "Illinois" 2008 15222.390000 3.520000
+  , Datum "Illinois" 2009 14472.110000 3.530000
+  , Datum "Illinois" 2010 15524.600000 2.840000
+  , Datum "Illinois" 2011 15248.330000 3.130000
+  , Datum "Indiana" 1979 14840.800000 3.120000
+  , Datum "Indiana" 1980 15038.280000 2.470000
+  , Datum "Indiana" 1981 14685.870000 2.850000
+  , Datum "Indiana" 1982 14649.980000 3.120000
+  , Datum "Indiana" 1983 14635.030000 2.810000
+  , Datum "Indiana" 1984 14484.010000 2.820000
+  , Datum "Indiana" 1985 14515.410000 3.120000
+  , Datum "Indiana" 1986 14757.380000 2.760000
+  , Datum "Indiana" 1987 14859.030000 2.410000
+  , Datum "Indiana" 1988 15639.210000 2.370000
+  , Datum "Indiana" 1989 14557.310000 2.990000
+  , Datum "Indiana" 1990 14742.470000 3.710000
+  , Datum "Indiana" 1991 14622.780000 2.500000
+  , Datum "Indiana" 1992 14322.940000 2.840000
+  , Datum "Indiana" 1993 14109.410000 3.150000
+  , Datum "Indiana" 1994 14927.110000 2.390000
+  , Datum "Indiana" 1995 14482.890000 2.650000
+  , Datum "Indiana" 1996 14618.220000 3.290000
+  , Datum "Indiana" 1997 14561.640000 2.790000
+  , Datum "Indiana" 1998 14673.450000 3.130000
+  , Datum "Indiana" 1999 15583.280000 2.430000
+  , Datum "Indiana" 2000 14938.300000 3.040000
+  , Datum "Indiana" 2001 14967.920000 3.130000
+  , Datum "Indiana" 2002 14785.850000 3.080000
+  , Datum "Indiana" 2003 15062.050000 3.290000
+  , Datum "Indiana" 2004 14949.660000 3.060000
+  , Datum "Indiana" 2005 15078.130000 2.920000
+  , Datum "Indiana" 2006 15027.430000 3.660000
+  , Datum "Indiana" 2007 15603.230000 2.930000
+  , Datum "Indiana" 2008 15319.290000 3.520000
+  , Datum "Indiana" 2009 14452.380000 3.270000
+  , Datum "Indiana" 2010 15488.790000 2.600000
+  , Datum "Indiana" 2011 15000.750000 3.860000
+  , Datum "Iowa" 1979 14908.440000 2.350000
+  , Datum "Iowa" 1980 15041.360000 1.990000
+  , Datum "Iowa" 1981 14846.300000 2.190000
+  , Datum "Iowa" 1982 14446.090000 2.840000
+  , Datum "Iowa" 1983 14373.310000 2.530000
+  , Datum "Iowa" 1984 14324.640000 2.540000
+  , Datum "Iowa" 1985 14550.580000 2.140000
+  , Datum "Iowa" 1986 14650.640000 2.760000
+  , Datum "Iowa" 1987 14636.750000 2.260000
+  , Datum "Iowa" 1988 15558.620000 1.490000
+  , Datum "Iowa" 1989 14685.030000 1.690000
+  , Datum "Iowa" 1990 14559.090000 2.680000
+  , Datum "Iowa" 1991 14463.240000 2.650000
+  , Datum "Iowa" 1992 14275.340000 2.530000
+  , Datum "Iowa" 1993 13845.520000 3.400000
+  , Datum "Iowa" 1994 14973.280000 2.140000
+  , Datum "Iowa" 1995 14091.590000 2.300000
+  , Datum "Iowa" 1996 14393.880000 2.400000
+  , Datum "Iowa" 1997 14425.440000 2.090000
+  , Datum "Iowa" 1998 14303.840000 2.810000
+  , Datum "Iowa" 1999 15099.140000 2.370000
+  , Datum "Iowa" 2000 14760.270000 2.010000
+  , Datum "Iowa" 2001 14631.210000 2.310000
+  , Datum "Iowa" 2002 14652.530000 2.080000
+  , Datum "Iowa" 2003 14968.240000 1.930000
+  , Datum "Iowa" 2004 14805.720000 2.360000
+  , Datum "Iowa" 2005 14982.680000 2.020000
+  , Datum "Iowa" 2006 14795.980000 2.200000
+  , Datum "Iowa" 2007 15311.840000 2.820000
+  , Datum "Iowa" 2008 14818.800000 2.870000
+  , Datum "Iowa" 2009 14412.560000 2.670000
+  , Datum "Iowa" 2010 15170.010000 3.040000
+  , Datum "Iowa" 2011 14994.590000 2.100000
+  , Datum "Kansas" 1979 16897.370000 1.990000
+  , Datum "Kansas" 1980 16992.990000 1.480000
+  , Datum "Kansas" 1981 16627.070000 2.060000
+  , Datum "Kansas" 1982 16653.020000 1.940000
+  , Datum "Kansas" 1983 16544.780000 1.830000
+  , Datum "Kansas" 1984 16501.190000 1.980000
+  , Datum "Kansas" 1985 16702.160000 2.240000
+  , Datum "Kansas" 1986 16591.120000 2.140000
+  , Datum "Kansas" 1987 16598.970000 2.220000
+  , Datum "Kansas" 1988 16745.140000 1.360000
+  , Datum "Kansas" 1989 16433.940000 1.820000
+  , Datum "Kansas" 1990 16593.310000 1.920000
+  , Datum "Kansas" 1991 16624.510000 1.620000
+  , Datum "Kansas" 1992 16306.380000 2.330000
+  , Datum "Kansas" 1993 16076.340000 2.640000
+  , Datum "Kansas" 1994 16809.640000 1.750000
+  , Datum "Kansas" 1995 16013.320000 2.060000
+  , Datum "Kansas" 1996 16299.100000 2.170000
+  , Datum "Kansas" 1997 16321.570000 2.180000
+  , Datum "Kansas" 1998 16358.820000 2.280000
+  , Datum "Kansas" 1999 16702.360000 2.310000
+  , Datum "Kansas" 2000 16661.360000 1.920000
+  , Datum "Kansas" 2001 16768.500000 2.100000
+  , Datum "Kansas" 2002 16726.990000 1.720000
+  , Datum "Kansas" 2003 16789.950000 1.900000
+  , Datum "Kansas" 2004 16609.150000 2.280000
+  , Datum "Kansas" 2005 16648.930000 2.260000
+  , Datum "Kansas" 2006 16860.870000 1.930000
+  , Datum "Kansas" 2007 16770.710000 2.570000
+  , Datum "Kansas" 2008 16691.070000 2.500000
+  , Datum "Kansas" 2009 16226.000000 2.360000
+  , Datum "Kansas" 2010 16939.870000 2.040000
+  , Datum "Kansas" 2011 17035.460000 1.770000
+  , Datum "Kentucky" 1979 14849.940000 4.290000
+  , Datum "Kentucky" 1980 15784.320000 2.610000
+  , Datum "Kentucky" 1981 15109.200000 3.090000
+  , Datum "Kentucky" 1982 14797.570000 3.450000
+  , Datum "Kentucky" 1983 15028.360000 3.330000
+  , Datum "Kentucky" 1984 14792.980000 3.630000
+  , Datum "Kentucky" 1985 14907.590000 3.040000
+  , Datum "Kentucky" 1986 15220.980000 2.910000
+  , Datum "Kentucky" 1987 15106.070000 2.650000
+  , Datum "Kentucky" 1988 16063.280000 3.000000
+  , Datum "Kentucky" 1989 14752.750000 3.960000
+  , Datum "Kentucky" 1990 15266.340000 3.830000
+  , Datum "Kentucky" 1991 14609.160000 3.190000
+  , Datum "Kentucky" 1992 14762.450000 2.900000
+  , Datum "Kentucky" 1993 14870.260000 3.020000
+  , Datum "Kentucky" 1994 15278.830000 3.220000
+  , Datum "Kentucky" 1995 15165.260000 3.100000
+  , Datum "Kentucky" 1996 15082.800000 3.910000
+  , Datum "Kentucky" 1997 14989.860000 3.390000
+  , Datum "Kentucky" 1998 14982.190000 3.360000
+  , Datum "Kentucky" 1999 15984.320000 2.610000
+  , Datum "Kentucky" 2000 15577.100000 3.050000
+  , Datum "Kentucky" 2001 15478.650000 3.120000
+  , Datum "Kentucky" 2002 14840.640000 3.790000
+  , Datum "Kentucky" 2003 15298.720000 3.900000
+  , Datum "Kentucky" 2004 15138.450000 3.920000
+  , Datum "Kentucky" 2005 15563.100000 2.780000
+  , Datum "Kentucky" 2006 15655.070000 3.570000
+  , Datum "Kentucky" 2007 16220.590000 2.890000
+  , Datum "Kentucky" 2008 15695.230000 3.250000
+  , Datum "Kentucky" 2009 14684.870000 3.860000
+  , Datum "Kentucky" 2010 15734.340000 3.090000
+  , Datum "Kentucky" 2011 15449.730000 4.450000
+  , Datum "Louisiana" 1979 17646.250000 4.720000
+  , Datum "Louisiana" 1980 18499.540000 3.840000
+  , Datum "Louisiana" 1981 17278.070000 3.140000
+  , Datum "Louisiana" 1982 16955.340000 4.430000
+  , Datum "Louisiana" 1983 17183.070000 4.510000
+  , Datum "Louisiana" 1984 17246.930000 3.970000
+  , Datum "Louisiana" 1985 17148.490000 4.130000
+  , Datum "Louisiana" 1986 17129.680000 3.660000
+  , Datum "Louisiana" 1987 17182.060000 4.040000
+  , Datum "Louisiana" 1988 17506.470000 3.950000
+  , Datum "Louisiana" 1989 16760.450000 4.290000
+  , Datum "Louisiana" 1990 17675.970000 4.030000
+  , Datum "Louisiana" 1991 16569.980000 5.370000
+  , Datum "Louisiana" 1992 17109.690000 4.570000
+  , Datum "Louisiana" 1993 16879.350000 4.100000
+  , Datum "Louisiana" 1994 16851.600000 4.200000
+  , Datum "Louisiana" 1995 17322.350000 4.300000
+  , Datum "Louisiana" 1996 17445.630000 3.730000
+  , Datum "Louisiana" 1997 16717.170000 4.350000
+  , Datum "Louisiana" 1998 18133.150000 4.120000
+  , Datum "Louisiana" 1999 18508.080000 3.170000
+  , Datum "Louisiana" 2000 18401.080000 3.180000
+  , Datum "Louisiana" 2001 17207.380000 4.480000
+  , Datum "Louisiana" 2002 16861.230000 4.510000
+  , Datum "Louisiana" 2003 17741.690000 3.670000
+  , Datum "Louisiana" 2004 17846.460000 5.060000
+  , Datum "Louisiana" 2005 18228.860000 3.190000
+  , Datum "Louisiana" 2006 18435.510000 3.990000
+  , Datum "Louisiana" 2007 17654.090000 3.710000
+  , Datum "Louisiana" 2008 18291.710000 4.050000
+  , Datum "Louisiana" 2009 18155.030000 4.510000
+  , Datum "Louisiana" 2010 18197.880000 2.870000
+  , Datum "Louisiana" 2011 19395.650000 2.850000
+  , Datum "Maine" 1979 13222.410000 3.540000
+  , Datum "Maine" 1980 13147.920000 2.570000
+  , Datum "Maine" 1981 13051.190000 3.360000
+  , Datum "Maine" 1982 13262.690000 2.590000
+  , Datum "Maine" 1983 13066.500000 3.930000
+  , Datum "Maine" 1984 12952.290000 3.010000
+  , Datum "Maine" 1985 13338.000000 2.440000
+  , Datum "Maine" 1986 13167.610000 2.980000
+  , Datum "Maine" 1987 13474.910000 2.660000
+  , Datum "Maine" 1988 13366.040000 2.670000
+  , Datum "Maine" 1989 13238.880000 2.930000
+  , Datum "Maine" 1990 13423.720000 3.560000
+  , Datum "Maine" 1991 13893.730000 3.050000
+  , Datum "Maine" 1992 13546.150000 2.610000
+  , Datum "Maine" 1993 13480.350000 3.020000
+  , Datum "Maine" 1994 13544.060000 2.900000
+  , Datum "Maine" 1995 13625.550000 2.990000
+  , Datum "Maine" 1996 13243.890000 3.590000
+  , Datum "Maine" 1997 13251.600000 2.750000
+  , Datum "Maine" 1998 13580.980000 3.200000
+  , Datum "Maine" 1999 14084.400000 3.140000
+  , Datum "Maine" 2000 13563.060000 2.940000
+  , Datum "Maine" 2001 14565.620000 1.930000
+  , Datum "Maine" 2002 13642.840000 2.800000
+  , Datum "Maine" 2003 13735.300000 3.220000
+  , Datum "Maine" 2004 13973.260000 2.720000
+  , Datum "Maine" 2005 13979.560000 4.450000
+  , Datum "Maine" 2006 13710.440000 3.610000
+  , Datum "Maine" 2007 14242.490000 3.250000
+  , Datum "Maine" 2008 14035.310000 4.100000
+  , Datum "Maine" 2009 13769.950000 3.470000
+  , Datum "Maine" 2010 13810.570000 3.400000
+  , Datum "Maine" 2011 13752.000000 3.500000
+  , Datum "Maryland" 1979 14690.530000 3.920000
+  , Datum "Maryland" 1980 15646.150000 2.590000
+  , Datum "Maryland" 1981 15071.720000 2.580000
+  , Datum "Maryland" 1982 15303.850000 2.750000
+  , Datum "Maryland" 1983 15401.820000 3.570000
+  , Datum "Maryland" 1984 14823.970000 3.110000
+  , Datum "Maryland" 1985 15039.520000 2.790000
+  , Datum "Maryland" 1986 15279.750000 2.580000
+  , Datum "Maryland" 1987 15262.340000 2.670000
+  , Datum "Maryland" 1988 16024.720000 2.630000
+  , Datum "Maryland" 1989 14831.060000 3.570000
+  , Datum "Maryland" 1990 15325.330000 3.210000
+  , Datum "Maryland" 1991 15461.320000 2.450000
+  , Datum "Maryland" 1992 14853.400000 2.950000
+  , Datum "Maryland" 1993 15279.860000 3.230000
+  , Datum "Maryland" 1994 15478.500000 3.230000
+  , Datum "Maryland" 1995 15434.890000 2.730000
+  , Datum "Maryland" 1996 15000.080000 4.200000
+  , Datum "Maryland" 1997 15330.940000 2.700000
+  , Datum "Maryland" 1998 15227.210000 2.890000
+  , Datum "Maryland" 1999 16145.290000 2.980000
+  , Datum "Maryland" 2000 15470.940000 2.900000
+  , Datum "Maryland" 2001 15879.380000 2.430000
+  , Datum "Maryland" 2002 15606.640000 2.970000
+  , Datum "Maryland" 2003 14907.910000 4.360000
+  , Datum "Maryland" 2004 15306.820000 3.330000
+  , Datum "Maryland" 2005 15476.420000 3.180000
+  , Datum "Maryland" 2006 16005.460000 3.180000
+  , Datum "Maryland" 2007 16034.710000 2.480000
+  , Datum "Maryland" 2008 16076.000000 3.240000
+  , Datum "Maryland" 2009 14945.520000 3.590000
+  , Datum "Maryland" 2010 16141.410000 2.900000
+  , Datum "Maryland" 2011 15897.120000 3.630000
+  , Datum "Massachusetts" 1979 14466.080000 3.900000
+  , Datum "Massachusetts" 1980 14684.390000 2.520000
+  , Datum "Massachusetts" 1981 14474.640000 3.030000
+  , Datum "Massachusetts" 1982 14687.360000 3.190000
+  , Datum "Massachusetts" 1983 14578.580000 4.190000
+  , Datum "Massachusetts" 1984 14107.250000 3.470000
+  , Datum "Massachusetts" 1985 14426.100000 2.800000
+  , Datum "Massachusetts" 1986 14498.940000 3.390000
+  , Datum "Massachusetts" 1987 14494.580000 3.180000
+  , Datum "Massachusetts" 1988 14956.280000 2.970000
+  , Datum "Massachusetts" 1989 14230.260000 3.600000
+  , Datum "Massachusetts" 1990 14695.630000 3.610000
+  , Datum "Massachusetts" 1991 15097.860000 3.360000
+  , Datum "Massachusetts" 1992 14611.050000 3.180000
+  , Datum "Massachusetts" 1993 14699.130000 3.130000
+  , Datum "Massachusetts" 1994 14852.130000 3.380000
+  , Datum "Massachusetts" 1995 14505.770000 2.920000
+  , Datum "Massachusetts" 1996 14269.210000 4.160000
+  , Datum "Massachusetts" 1997 14602.890000 2.850000
+  , Datum "Massachusetts" 1998 14816.020000 3.340000
+  , Datum "Massachusetts" 1999 15352.450000 2.930000
+  , Datum "Massachusetts" 2000 14328.360000 3.230000
+  , Datum "Massachusetts" 2001 15441.660000 2.430000
+  , Datum "Massachusetts" 2002 14853.240000 3.080000
+  , Datum "Massachusetts" 2003 14494.640000 3.610000
+  , Datum "Massachusetts" 2004 14901.470000 3.260000
+  , Datum "Massachusetts" 2005 15045.290000 3.940000
+  , Datum "Massachusetts" 2006 14731.460000 3.680000
+  , Datum "Massachusetts" 2007 15315.420000 3.060000
+  , Datum "Massachusetts" 2008 15205.330000 4.300000
+  , Datum "Massachusetts" 2009 14746.040000 3.640000
+  , Datum "Massachusetts" 2010 15165.100000 3.440000
+  , Datum "Massachusetts" 2011 15134.620000 4.180000
+  , Datum "Michigan" 1979 14165.000000 2.230000
+  , Datum "Michigan" 1980 14056.130000 2.200000
+  , Datum "Michigan" 1981 14138.810000 2.240000
+  , Datum "Michigan" 1982 14164.810000 2.390000
+  , Datum "Michigan" 1983 14180.470000 2.430000
+  , Datum "Michigan" 1984 14192.610000 2.220000
+  , Datum "Michigan" 1985 14019.850000 2.720000
+  , Datum "Michigan" 1986 14209.100000 2.370000
+  , Datum "Michigan" 1987 14450.790000 2.120000
+  , Datum "Michigan" 1988 14701.500000 2.240000
+  , Datum "Michigan" 1989 14219.530000 1.900000
+  , Datum "Michigan" 1990 14029.860000 2.510000
+  , Datum "Michigan" 1991 14383.120000 2.480000
+  , Datum "Michigan" 1992 13944.970000 2.330000
+  , Datum "Michigan" 1993 13740.990000 2.290000
+  , Datum "Michigan" 1994 14608.390000 2.270000
+  , Datum "Michigan" 1995 13757.600000 2.250000
+  , Datum "Michigan" 1996 13755.040000 2.400000
+  , Datum "Michigan" 1997 13897.890000 2.130000
+  , Datum "Michigan" 1998 14531.330000 2.120000
+  , Datum "Michigan" 1999 14778.200000 2.390000
+  , Datum "Michigan" 2000 14209.380000 2.330000
+  , Datum "Michigan" 2001 14213.920000 2.460000
+  , Datum "Michigan" 2002 14151.260000 2.260000
+  , Datum "Michigan" 2003 14403.180000 2.250000
+  , Datum "Michigan" 2004 14146.410000 2.470000
+  , Datum "Michigan" 2005 14727.180000 2.180000
+  , Datum "Michigan" 2006 14591.600000 2.620000
+  , Datum "Michigan" 2007 14985.340000 2.090000
+  , Datum "Michigan" 2008 14679.010000 2.500000
+  , Datum "Michigan" 2009 14152.550000 2.420000
+  , Datum "Michigan" 2010 14872.270000 2.200000
+  , Datum "Michigan" 2011 14610.290000 2.600000
+  , Datum "Minnesota" 1979 13752.260000 1.940000
+  , Datum "Minnesota" 1980 14247.180000 1.510000
+  , Datum "Minnesota" 1981 14059.890000 1.910000
+  , Datum "Minnesota" 1982 13852.810000 2.050000
+  , Datum "Minnesota" 1983 13819.140000 2.010000
+  , Datum "Minnesota" 1984 13885.910000 1.900000
+  , Datum "Minnesota" 1985 13813.170000 2.110000
+  , Datum "Minnesota" 1986 13957.160000 2.140000
+  , Datum "Minnesota" 1987 14070.830000 1.500000
+  , Datum "Minnesota" 1988 14709.240000 1.530000
+  , Datum "Minnesota" 1989 14013.600000 1.540000
+  , Datum "Minnesota" 1990 14030.990000 1.790000
+  , Datum "Minnesota" 1991 13902.700000 2.240000
+  , Datum "Minnesota" 1992 13562.400000 1.770000
+  , Datum "Minnesota" 1993 13450.030000 2.210000
+  , Datum "Minnesota" 1994 14088.770000 2.000000
+  , Datum "Minnesota" 1995 13361.630000 2.100000
+  , Datum "Minnesota" 1996 14016.410000 1.950000
+  , Datum "Minnesota" 1997 13942.520000 1.760000
+  , Datum "Minnesota" 1998 14035.540000 2.030000
+  , Datum "Minnesota" 1999 14241.700000 2.120000
+  , Datum "Minnesota" 2000 14079.450000 1.750000
+  , Datum "Minnesota" 2001 14126.480000 1.990000
+  , Datum "Minnesota" 2002 13852.340000 2.020000
+  , Datum "Minnesota" 2003 14351.550000 1.440000
+  , Datum "Minnesota" 2004 13816.180000 2.000000
+  , Datum "Minnesota" 2005 14204.270000 2.170000
+  , Datum "Minnesota" 2006 14459.550000 1.560000
+  , Datum "Minnesota" 2007 14622.100000 1.830000
+  , Datum "Minnesota" 2008 14295.600000 1.670000
+  , Datum "Minnesota" 2009 13950.770000 1.780000
+  , Datum "Minnesota" 2010 14472.530000 2.250000
+  , Datum "Minnesota" 2011 14424.050000 1.630000
+  , Datum "Mississippi" 1979 17131.600000 5.070000
+  , Datum "Mississippi" 1980 17667.090000 4.200000
+  , Datum "Mississippi" 1981 17069.400000 2.970000
+  , Datum "Mississippi" 1982 16399.150000 4.470000
+  , Datum "Mississippi" 1983 16542.710000 4.990000
+  , Datum "Mississippi" 1984 16662.490000 3.740000
+  , Datum "Mississippi" 1985 16436.170000 3.650000
+  , Datum "Mississippi" 1986 16704.290000 3.370000
+  , Datum "Mississippi" 1987 16782.770000 3.610000
+  , Datum "Mississippi" 1988 17013.430000 3.630000
+  , Datum "Mississippi" 1989 16008.280000 4.490000
+  , Datum "Mississippi" 1990 17143.100000 4.130000
+  , Datum "Mississippi" 1991 16045.290000 5.060000
+  , Datum "Mississippi" 1992 16704.390000 3.800000
+  , Datum "Mississippi" 1993 16344.800000 3.750000
+  , Datum "Mississippi" 1994 16507.400000 4.150000
+  , Datum "Mississippi" 1995 17084.340000 3.970000
+  , Datum "Mississippi" 1996 16964.130000 3.750000
+  , Datum "Mississippi" 1997 16370.470000 4.420000
+  , Datum "Mississippi" 1998 17266.640000 3.830000
+  , Datum "Mississippi" 1999 17698.230000 3.150000
+  , Datum "Mississippi" 2000 18134.650000 2.990000
+  , Datum "Mississippi" 2001 16827.690000 4.350000
+  , Datum "Mississippi" 2002 16393.240000 4.520000
+  , Datum "Mississippi" 2003 17068.340000 4.000000
+  , Datum "Mississippi" 2004 17186.380000 4.520000
+  , Datum "Mississippi" 2005 17498.020000 3.480000
+  , Datum "Mississippi" 2006 18041.190000 3.660000
+  , Datum "Mississippi" 2007 17554.240000 2.870000
+  , Datum "Mississippi" 2008 17605.870000 4.200000
+  , Datum "Mississippi" 2009 17530.250000 4.800000
+  , Datum "Mississippi" 2010 17615.830000 3.150000
+  , Datum "Mississippi" 2011 18384.950000 3.640000
+  , Datum "Missouri" 1979 15751.840000 2.720000
+  , Datum "Missouri" 1980 16152.920000 1.980000
+  , Datum "Missouri" 1981 15483.340000 3.060000
+  , Datum "Missouri" 1982 15314.490000 3.470000
+  , Datum "Missouri" 1983 15348.140000 2.830000
+  , Datum "Missouri" 1984 15461.670000 3.190000
+  , Datum "Missouri" 1985 15341.780000 3.490000
+  , Datum "Missouri" 1986 15578.850000 2.870000
+  , Datum "Missouri" 1987 15498.650000 2.770000
+  , Datum "Missouri" 1988 16289.190000 2.330000
+  , Datum "Missouri" 1989 15287.340000 2.270000
+  , Datum "Missouri" 1990 15519.830000 3.500000
+  , Datum "Missouri" 1991 15483.650000 2.690000
+  , Datum "Missouri" 1992 15176.690000 2.930000
+  , Datum "Missouri" 1993 14901.160000 3.900000
+  , Datum "Missouri" 1994 15687.210000 2.960000
+  , Datum "Missouri" 1995 15217.170000 2.970000
+  , Datum "Missouri" 1996 15349.420000 3.040000
+  , Datum "Missouri" 1997 15266.200000 2.770000
+  , Datum "Missouri" 1998 15319.180000 3.450000
+  , Datum "Missouri" 1999 15975.410000 2.700000
+  , Datum "Missouri" 2000 15686.030000 2.430000
+  , Datum "Missouri" 2001 15583.200000 3.040000
+  , Datum "Missouri" 2002 15636.240000 2.950000
+  , Datum "Missouri" 2003 16065.500000 2.930000
+  , Datum "Missouri" 2004 15698.160000 3.180000
+  , Datum "Missouri" 2005 16154.840000 2.690000
+  , Datum "Missouri" 2006 16063.940000 2.780000
+  , Datum "Missouri" 2007 15957.140000 2.920000
+  , Datum "Missouri" 2008 15754.700000 4.100000
+  , Datum "Missouri" 2009 15190.420000 3.700000
+  , Datum "Missouri" 2010 15976.950000 3.220000
+  , Datum "Missouri" 2011 16069.900000 3.260000
+  , Datum "Montana" 1979 14934.160000 0.940000
+  , Datum "Montana" 1980 14817.150000 1.360000
+  , Datum "Montana" 1981 14846.180000 1.290000
+  , Datum "Montana" 1982 14616.780000 1.520000
+  , Datum "Montana" 1983 14631.720000 1.170000
+  , Datum "Montana" 1984 14617.170000 1.100000
+  , Datum "Montana" 1985 14925.000000 1.170000
+  , Datum "Montana" 1986 14854.950000 1.440000
+  , Datum "Montana" 1987 15028.300000 1.100000
+  , Datum "Montana" 1988 15252.340000 0.970000
+  , Datum "Montana" 1989 14716.080000 1.440000
+  , Datum "Montana" 1990 14816.270000 1.120000
+  , Datum "Montana" 1991 14682.620000 1.350000
+  , Datum "Montana" 1992 14672.430000 1.200000
+  , Datum "Montana" 1993 14439.560000 1.570000
+  , Datum "Montana" 1994 15035.790000 1.080000
+  , Datum "Montana" 1995 14485.460000 1.520000
+  , Datum "Montana" 1996 14636.000000 1.470000
+  , Datum "Montana" 1997 14634.140000 1.340000
+  , Datum "Montana" 1998 14773.690000 1.430000
+  , Datum "Montana" 1999 14739.190000 1.210000
+  , Datum "Montana" 2000 14820.020000 1.210000
+  , Datum "Montana" 2001 15011.290000 1.080000
+  , Datum "Montana" 2002 14455.900000 1.270000
+  , Datum "Montana" 2003 14813.490000 1.260000
+  , Datum "Montana" 2004 14591.250000 1.190000
+  , Datum "Montana" 2005 14658.770000 1.420000
+  , Datum "Montana" 2006 15119.020000 1.330000
+  , Datum "Montana" 2007 15080.890000 1.300000
+  , Datum "Montana" 2008 14758.980000 1.330000
+  , Datum "Montana" 2009 14855.880000 1.210000
+  , Datum "Montana" 2010 14748.300000 1.480000
+  , Datum "Montana" 2011 14668.010000 1.620000
+  , Datum "Nebraska" 1979 15878.210000 1.740000
+  , Datum "Nebraska" 1980 16142.540000 1.180000
+  , Datum "Nebraska" 1981 16011.190000 1.660000
+  , Datum "Nebraska" 1982 15761.460000 1.900000
+  , Datum "Nebraska" 1983 15823.840000 1.730000
+  , Datum "Nebraska" 1984 15779.210000 1.770000
+  , Datum "Nebraska" 1985 15931.140000 1.540000
+  , Datum "Nebraska" 1986 15907.060000 1.830000
+  , Datum "Nebraska" 1987 15758.000000 1.750000
+  , Datum "Nebraska" 1988 16116.400000 1.380000
+  , Datum "Nebraska" 1989 15869.530000 1.150000
+  , Datum "Nebraska" 1990 15776.240000 1.470000
+  , Datum "Nebraska" 1991 15846.780000 1.540000
+  , Datum "Nebraska" 1992 15602.850000 1.770000
+  , Datum "Nebraska" 1993 15278.330000 2.220000
+  , Datum "Nebraska" 1994 15981.240000 1.550000
+  , Datum "Nebraska" 1995 15157.100000 1.790000
+  , Datum "Nebraska" 1996 15519.120000 1.820000
+  , Datum "Nebraska" 1997 15456.260000 1.570000
+  , Datum "Nebraska" 1998 15382.770000 1.840000
+  , Datum "Nebraska" 1999 15836.980000 1.770000
+  , Datum "Nebraska" 2000 15922.150000 1.510000
+  , Datum "Nebraska" 2001 15846.090000 1.750000
+  , Datum "Nebraska" 2002 15861.170000 1.160000
+  , Datum "Nebraska" 2003 15912.580000 1.460000
+  , Datum "Nebraska" 2004 15699.490000 1.620000
+  , Datum "Nebraska" 2005 15871.120000 1.740000
+  , Datum "Nebraska" 2006 15802.570000 1.580000
+  , Datum "Nebraska" 2007 16054.050000 2.110000
+  , Datum "Nebraska" 2008 15817.340000 1.970000
+  , Datum "Nebraska" 2009 15283.580000 1.820000
+  , Datum "Nebraska" 2010 15922.250000 1.930000
+  , Datum "Nebraska" 2011 15870.650000 1.800000
+  , Datum "Nevada" 1979 18117.340000 0.670000
+  , Datum "Nevada" 1980 17936.660000 0.890000
+  , Datum "Nevada" 1981 17901.300000 0.730000
+  , Datum "Nevada" 1982 17629.650000 0.930000
+  , Datum "Nevada" 1983 17403.100000 1.230000
+  , Datum "Nevada" 1984 17581.410000 0.820000
+  , Datum "Nevada" 1985 18144.250000 0.620000
+  , Datum "Nevada" 1986 18101.500000 0.620000
+  , Datum "Nevada" 1987 18104.400000 0.830000
+  , Datum "Nevada" 1988 18137.660000 0.650000
+  , Datum "Nevada" 1989 18274.460000 0.510000
+  , Datum "Nevada" 1990 18108.100000 0.610000
+  , Datum "Nevada" 1991 17847.170000 0.670000
+  , Datum "Nevada" 1992 18148.850000 0.660000
+  , Datum "Nevada" 1993 18022.820000 0.750000
+  , Datum "Nevada" 1994 18031.580000 0.660000
+  , Datum "Nevada" 1995 17691.940000 0.960000
+  , Datum "Nevada" 1996 17963.630000 0.830000
+  , Datum "Nevada" 1997 17955.270000 0.700000
+  , Datum "Nevada" 1998 17541.610000 1.080000
+  , Datum "Nevada" 1999 18061.950000 0.400000
+  , Datum "Nevada" 2000 18161.840000 0.610000
+  , Datum "Nevada" 2001 18292.900000 0.570000
+  , Datum "Nevada" 2002 18382.600000 0.420000
+  , Datum "Nevada" 2003 18027.250000 0.620000
+  , Datum "Nevada" 2004 18228.150000 0.730000
+  , Datum "Nevada" 2005 17961.180000 0.970000
+  , Datum "Nevada" 2006 18293.390000 0.640000
+  , Datum "Nevada" 2007 18346.940000 0.540000
+  , Datum "Nevada" 2008 18439.560000 0.500000
+  , Datum "Nevada" 2009 18137.100000 0.610000
+  , Datum "Nevada" 2010 17971.140000 0.780000
+  , Datum "Nevada" 2011 18134.880000 0.540000
+  , Datum "New Hampshire" 1979 13919.120000 3.330000
+  , Datum "New Hampshire" 1980 13710.360000 2.510000
+  , Datum "New Hampshire" 1981 13696.220000 3.480000
+  , Datum "New Hampshire" 1982 13874.340000 2.750000
+  , Datum "New Hampshire" 1983 13768.780000 3.880000
+  , Datum "New Hampshire" 1984 13372.530000 3.260000
+  , Datum "New Hampshire" 1985 13580.530000 2.650000
+  , Datum "New Hampshire" 1986 13629.680000 3.250000
+  , Datum "New Hampshire" 1987 13709.790000 2.960000
+  , Datum "New Hampshire" 1988 13858.080000 2.830000
+  , Datum "New Hampshire" 1989 13500.720000 3.200000
+  , Datum "New Hampshire" 1990 13933.980000 3.700000
+  , Datum "New Hampshire" 1991 14369.460000 3.180000
+  , Datum "New Hampshire" 1992 13956.650000 2.760000
+  , Datum "New Hampshire" 1993 13809.040000 2.950000
+  , Datum "New Hampshire" 1994 14067.140000 3.040000
+  , Datum "New Hampshire" 1995 13885.140000 3.050000
+  , Datum "New Hampshire" 1996 13625.300000 4.030000
+  , Datum "New Hampshire" 1997 13740.500000 2.890000
+  , Datum "New Hampshire" 1998 14002.600000 3.160000
+  , Datum "New Hampshire" 1999 14514.600000 3.090000
+  , Datum "New Hampshire" 2000 13609.060000 3.160000
+  , Datum "New Hampshire" 2001 14902.090000 2.190000
+  , Datum "New Hampshire" 2002 13969.860000 3.060000
+  , Datum "New Hampshire" 2003 13976.640000 3.450000
+  , Datum "New Hampshire" 2004 14261.850000 3.020000
+  , Datum "New Hampshire" 2005 14363.740000 4.340000
+  , Datum "New Hampshire" 2006 13858.990000 3.990000
+  , Datum "New Hampshire" 2007 14495.980000 3.090000
+  , Datum "New Hampshire" 2008 14362.020000 4.160000
+  , Datum "New Hampshire" 2009 14151.960000 3.430000
+  , Datum "New Hampshire" 2010 14350.710000 3.410000
+  , Datum "New Hampshire" 2011 14319.930000 3.840000
+  , Datum "New Jersey" 1979 14593.260000 3.980000
+  , Datum "New Jersey" 1980 15478.470000 2.690000
+  , Datum "New Jersey" 1981 14655.700000 2.750000
+  , Datum "New Jersey" 1982 15054.190000 2.820000
+  , Datum "New Jersey" 1983 15349.920000 4.120000
+  , Datum "New Jersey" 1984 14552.480000 3.440000
+  , Datum "New Jersey" 1985 14814.730000 2.760000
+  , Datum "New Jersey" 1986 14973.260000 3.210000
+  , Datum "New Jersey" 1987 15013.520000 3.140000
+  , Datum "New Jersey" 1988 15740.790000 2.810000
+  , Datum "New Jersey" 1989 14709.050000 3.810000
+  , Datum "New Jersey" 1990 14961.310000 3.390000
+  , Datum "New Jersey" 1991 15422.210000 2.940000
+  , Datum "New Jersey" 1992 14711.680000 2.900000
+  , Datum "New Jersey" 1993 15146.080000 3.160000
+  , Datum "New Jersey" 1994 15401.730000 3.300000
+  , Datum "New Jersey" 1995 15298.530000 2.820000
+  , Datum "New Jersey" 1996 14865.880000 4.130000
+  , Datum "New Jersey" 1997 15241.350000 2.850000
+  , Datum "New Jersey" 1998 15238.930000 2.930000
+  , Datum "New Jersey" 1999 15867.270000 3.390000
+  , Datum "New Jersey" 2000 15168.730000 3.140000
+  , Datum "New Jersey" 2001 15808.400000 2.480000
+  , Datum "New Jersey" 2002 15587.450000 3.240000
+  , Datum "New Jersey" 2003 14861.220000 4.110000
+  , Datum "New Jersey" 2004 15339.350000 3.370000
+  , Datum "New Jersey" 2005 15533.120000 3.490000
+  , Datum "New Jersey" 2006 15861.630000 3.550000
+  , Datum "New Jersey" 2007 15758.560000 3.250000
+  , Datum "New Jersey" 2008 15858.730000 3.440000
+  , Datum "New Jersey" 2009 14882.300000 3.670000
+  , Datum "New Jersey" 2010 15857.230000 3.140000
+  , Datum "New Jersey" 2011 15755.530000 4.440000
+  , Datum "New Mexico" 1979 19282.550000 0.990000
+  , Datum "New Mexico" 1980 19169.490000 0.840000
+  , Datum "New Mexico" 1981 19106.740000 1.060000
+  , Datum "New Mexico" 1982 18981.210000 1.050000
+  , Datum "New Mexico" 1983 19054.720000 0.980000
+  , Datum "New Mexico" 1984 18925.060000 1.220000
+  , Datum "New Mexico" 1985 18957.730000 1.210000
+  , Datum "New Mexico" 1986 18812.810000 1.450000
+  , Datum "New Mexico" 1987 18975.550000 1.060000
+  , Datum "New Mexico" 1988 19157.250000 1.120000
+  , Datum "New Mexico" 1989 19426.230000 0.760000
+  , Datum "New Mexico" 1990 18883.210000 1.110000
+  , Datum "New Mexico" 1991 18900.270000 1.320000
+  , Datum "New Mexico" 1992 18961.160000 1.100000
+  , Datum "New Mexico" 1993 19123.940000 0.990000
+  , Datum "New Mexico" 1994 19101.740000 1.000000
+  , Datum "New Mexico" 1995 19250.200000 0.830000
+  , Datum "New Mexico" 1996 19282.340000 0.970000
+  , Datum "New Mexico" 1997 18946.180000 1.260000
+  , Datum "New Mexico" 1998 19168.760000 0.940000
+  , Datum "New Mexico" 1999 19255.480000 0.910000
+  , Datum "New Mexico" 2000 19331.910000 0.840000
+  , Datum "New Mexico" 2001 19195.240000 0.740000
+  , Datum "New Mexico" 2002 19326.950000 0.920000
+  , Datum "New Mexico" 2003 19414.870000 0.720000
+  , Datum "New Mexico" 2004 19076.990000 1.250000
+  , Datum "New Mexico" 2005 19128.960000 1.020000
+  , Datum "New Mexico" 2006 19247.810000 1.110000
+  , Datum "New Mexico" 2007 19192.380000 1.000000
+  , Datum "New Mexico" 2008 19281.610000 0.960000
+  , Datum "New Mexico" 2009 19517.260000 0.860000
+  , Datum "New Mexico" 2010 19493.480000 1.010000
+  , Datum "New Mexico" 2011 19839.580000 0.670000
+  , Datum "New York" 1979 13903.430000 3.030000
+  , Datum "New York" 1980 13935.840000 2.530000
+  , Datum "New York" 1981 13411.160000 2.790000
+  , Datum "New York" 1982 14079.690000 2.590000
+  , Datum "New York" 1983 13971.760000 3.190000
+  , Datum "New York" 1984 13657.270000 2.950000
+  , Datum "New York" 1985 13743.280000 2.700000
+  , Datum "New York" 1986 13707.080000 3.120000
+  , Datum "New York" 1987 13955.350000 2.760000
+  , Datum "New York" 1988 14017.690000 2.500000
+  , Datum "New York" 1989 13470.650000 2.990000
+  , Datum "New York" 1990 13599.750000 3.490000
+  , Datum "New York" 1991 14211.350000 2.590000
+  , Datum "New York" 1992 13603.460000 2.980000
+  , Datum "New York" 1993 13842.070000 2.860000
+  , Datum "New York" 1994 14077.140000 2.890000
+  , Datum "New York" 1995 13875.550000 2.540000
+  , Datum "New York" 1996 13447.790000 3.510000
+  , Datum "New York" 1997 13733.180000 2.690000
+  , Datum "New York" 1998 14106.120000 2.850000
+  , Datum "New York" 1999 14746.560000 2.670000
+  , Datum "New York" 2000 13524.050000 3.180000
+  , Datum "New York" 2001 14320.230000 2.300000
+  , Datum "New York" 2002 13987.000000 3.040000
+  , Datum "New York" 2003 13743.230000 3.390000
+  , Datum "New York" 2004 13864.580000 3.210000
+  , Datum "New York" 2005 14405.890000 3.300000
+  , Datum "New York" 2006 13748.180000 3.450000
+  , Datum "New York" 2007 14393.310000 3.060000
+  , Datum "New York" 2008 14241.710000 3.460000
+  , Datum "New York" 2009 14025.040000 2.930000
+  , Datum "New York" 2010 14340.830000 3.070000
+  , Datum "New York" 2011 14128.050000 3.840000
+  , Datum "North Carolina" 1979 16157.180000 4.050000
+  , Datum "North Carolina" 1980 16695.250000 3.080000
+  , Datum "North Carolina" 1981 16643.450000 2.880000
+  , Datum "North Carolina" 1982 15875.450000 3.580000
+  , Datum "North Carolina" 1983 16413.650000 3.680000
+  , Datum "North Carolina" 1984 16324.020000 3.500000
+  , Datum "North Carolina" 1985 16347.360000 3.220000
+  , Datum "North Carolina" 1986 16178.400000 2.660000
+  , Datum "North Carolina" 1987 16222.990000 3.320000
+  , Datum "North Carolina" 1988 16739.990000 2.800000
+  , Datum "North Carolina" 1989 15650.480000 4.230000
+  , Datum "North Carolina" 1990 16648.090000 3.360000
+  , Datum "North Carolina" 1991 15943.210000 3.320000
+  , Datum "North Carolina" 1992 15850.690000 3.590000
+  , Datum "North Carolina" 1993 16447.170000 3.180000
+  , Datum "North Carolina" 1994 16162.020000 3.480000
+  , Datum "North Carolina" 1995 16274.090000 3.720000
+  , Datum "North Carolina" 1996 16176.460000 3.840000
+  , Datum "North Carolina" 1997 16390.340000 3.130000
+  , Datum "North Carolina" 1998 16391.340000 3.630000
+  , Datum "North Carolina" 1999 16954.600000 3.430000
+  , Datum "North Carolina" 2000 16777.190000 2.990000
+  , Datum "North Carolina" 2001 16556.980000 2.620000
+  , Datum "North Carolina" 2002 16350.470000 3.270000
+  , Datum "North Carolina" 2003 16115.320000 4.320000
+  , Datum "North Carolina" 2004 16258.330000 3.350000
+  , Datum "North Carolina" 2005 16352.990000 3.300000
+  , Datum "North Carolina" 2006 16963.970000 3.630000
+  , Datum "North Carolina" 2007 17402.860000 2.340000
+  , Datum "North Carolina" 2008 17297.610000 3.190000
+  , Datum "North Carolina" 2009 16251.280000 3.700000
+  , Datum "North Carolina" 2010 17292.980000 3.210000
+  , Datum "North Carolina" 2011 17483.330000 3.100000
+  , Datum "North Dakota" 1979 14549.060000 0.980000
+  , Datum "North Dakota" 1980 14882.760000 1.140000
+  , Datum "North Dakota" 1981 14716.780000 1.180000
+  , Datum "North Dakota" 1982 14220.240000 1.470000
+  , Datum "North Dakota" 1983 14460.880000 1.090000
+  , Datum "North Dakota" 1984 14399.170000 1.080000
+  , Datum "North Dakota" 1985 14423.570000 1.190000
+  , Datum "North Dakota" 1986 14387.670000 1.500000
+  , Datum "North Dakota" 1987 14387.130000 1.090000
+  , Datum "North Dakota" 1988 15167.730000 0.780000
+  , Datum "North Dakota" 1989 14749.450000 0.980000
+  , Datum "North Dakota" 1990 14658.750000 1.030000
+  , Datum "North Dakota" 1991 14322.850000 1.350000
+  , Datum "North Dakota" 1992 14032.680000 1.020000
+  , Datum "North Dakota" 1993 13931.350000 1.590000
+  , Datum "North Dakota" 1994 14599.520000 1.440000
+  , Datum "North Dakota" 1995 13998.120000 1.370000
+  , Datum "North Dakota" 1996 14366.330000 1.320000
+  , Datum "North Dakota" 1997 14767.380000 1.170000
+  , Datum "North Dakota" 1998 14292.830000 1.490000
+  , Datum "North Dakota" 1999 14344.290000 1.550000
+  , Datum "North Dakota" 2000 14516.540000 1.530000
+  , Datum "North Dakota" 2001 14706.400000 1.300000
+  , Datum "North Dakota" 2002 14281.930000 1.200000
+  , Datum "North Dakota" 2003 14538.820000 1.150000
+  , Datum "North Dakota" 2004 14253.120000 1.250000
+  , Datum "North Dakota" 2005 14486.390000 1.530000
+  , Datum "North Dakota" 2006 14983.620000 1.000000
+  , Datum "North Dakota" 2007 14816.280000 1.400000
+  , Datum "North Dakota" 2008 14752.890000 1.420000
+  , Datum "North Dakota" 2009 14499.010000 1.380000
+  , Datum "North Dakota" 2010 14774.870000 1.660000
+  , Datum "North Dakota" 2011 14708.970000 1.600000
+  , Datum "Ohio" 1979 14170.680000 3.040000
+  , Datum "Ohio" 1980 14639.630000 2.710000
+  , Datum "Ohio" 1981 14435.920000 2.690000
+  , Datum "Ohio" 1982 14353.040000 2.620000
+  , Datum "Ohio" 1983 14360.870000 2.800000
+  , Datum "Ohio" 1984 14086.420000 2.520000
+  , Datum "Ohio" 1985 14320.640000 2.750000
+  , Datum "Ohio" 1986 14576.690000 2.710000
+  , Datum "Ohio" 1987 14673.350000 2.180000
+  , Datum "Ohio" 1988 15102.240000 2.230000
+  , Datum "Ohio" 1989 14102.990000 2.940000
+  , Datum "Ohio" 1990 14437.940000 3.540000
+  , Datum "Ohio" 1991 14551.690000 2.190000
+  , Datum "Ohio" 1992 14083.560000 2.640000
+  , Datum "Ohio" 1993 14062.060000 2.450000
+  , Datum "Ohio" 1994 14732.650000 2.260000
+  , Datum "Ohio" 1995 14089.930000 2.520000
+  , Datum "Ohio" 1996 14177.190000 3.210000
+  , Datum "Ohio" 1997 14350.610000 2.610000
+  , Datum "Ohio" 1998 14591.670000 2.690000
+  , Datum "Ohio" 1999 15641.870000 2.140000
+  , Datum "Ohio" 2000 14697.440000 2.630000
+  , Datum "Ohio" 2001 14653.370000 2.520000
+  , Datum "Ohio" 2002 14561.340000 2.640000
+  , Datum "Ohio" 2003 14593.760000 3.090000
+  , Datum "Ohio" 2004 14475.140000 2.990000
+  , Datum "Ohio" 2005 14644.420000 2.750000
+  , Datum "Ohio" 2006 14823.620000 3.020000
+  , Datum "Ohio" 2007 15197.930000 2.750000
+  , Datum "Ohio" 2008 14974.180000 3.010000
+  , Datum "Ohio" 2009 14324.670000 2.480000
+  , Datum "Ohio" 2010 15305.650000 2.390000
+  , Datum "Ohio" 2011 14634.430000 3.810000
+  , Datum "Oklahoma" 1979 17102.150000 2.360000
+  , Datum "Oklahoma" 1980 17659.410000 1.830000
+  , Datum "Oklahoma" 1981 16968.750000 2.410000
+  , Datum "Oklahoma" 1982 17040.280000 2.440000
+  , Datum "Oklahoma" 1983 16997.450000 2.250000
+  , Datum "Oklahoma" 1984 16881.040000 2.400000
+  , Datum "Oklahoma" 1985 17000.300000 2.850000
+  , Datum "Oklahoma" 1986 16649.990000 2.720000
+  , Datum "Oklahoma" 1987 16835.520000 2.840000
+  , Datum "Oklahoma" 1988 16964.040000 2.020000
+  , Datum "Oklahoma" 1989 16709.280000 2.440000
+  , Datum "Oklahoma" 1990 16877.580000 2.960000
+  , Datum "Oklahoma" 1991 16788.780000 2.660000
+  , Datum "Oklahoma" 1992 16769.270000 2.870000
+  , Datum "Oklahoma" 1993 16798.330000 2.690000
+  , Datum "Oklahoma" 1994 17102.300000 2.560000
+  , Datum "Oklahoma" 1995 16606.850000 2.680000
+  , Datum "Oklahoma" 1996 16929.990000 2.630000
+  , Datum "Oklahoma" 1997 16568.970000 2.750000
+  , Datum "Oklahoma" 1998 17167.060000 2.510000
+  , Datum "Oklahoma" 1999 17413.870000 2.660000
+  , Datum "Oklahoma" 2000 17174.000000 2.540000
+  , Datum "Oklahoma" 2001 17134.610000 2.240000
+  , Datum "Oklahoma" 2002 16902.970000 2.450000
+  , Datum "Oklahoma" 2003 17281.430000 1.990000
+  , Datum "Oklahoma" 2004 16989.710000 2.790000
+  , Datum "Oklahoma" 2005 17366.940000 1.970000
+  , Datum "Oklahoma" 2006 17732.420000 2.140000
+  , Datum "Oklahoma" 2007 16921.440000 3.090000
+  , Datum "Oklahoma" 2008 17577.500000 2.710000
+  , Datum "Oklahoma" 2009 17082.960000 2.680000
+  , Datum "Oklahoma" 2010 17358.160000 2.220000
+  , Datum "Oklahoma" 2011 18009.520000 1.810000
+  , Datum "Oregon" 1979 16326.960000 2.280000
+  , Datum "Oregon" 1980 15976.930000 2.290000
+  , Datum "Oregon" 1981 15990.780000 2.690000
+  , Datum "Oregon" 1982 15831.770000 2.630000
+  , Datum "Oregon" 1983 15577.990000 3.190000
+  , Datum "Oregon" 1984 15459.310000 2.630000
+  , Datum "Oregon" 1985 16405.690000 1.580000
+  , Datum "Oregon" 1986 16227.080000 2.320000
+  , Datum "Oregon" 1987 16813.610000 1.910000
+  , Datum "Oregon" 1988 16315.310000 2.060000
+  , Datum "Oregon" 1989 16124.060000 1.900000
+  , Datum "Oregon" 1990 16142.720000 2.050000
+  , Datum "Oregon" 1991 16163.620000 2.100000
+  , Datum "Oregon" 1992 16539.550000 1.930000
+  , Datum "Oregon" 1993 15913.770000 2.230000
+  , Datum "Oregon" 1994 16332.880000 1.980000
+  , Datum "Oregon" 1995 15841.050000 2.950000
+  , Datum "Oregon" 1996 15811.990000 3.300000
+  , Datum "Oregon" 1997 15777.040000 2.170000
+  , Datum "Oregon" 1998 15791.280000 2.960000
+  , Datum "Oregon" 1999 15972.620000 2.150000
+  , Datum "Oregon" 2000 16359.440000 1.950000
+  , Datum "Oregon" 2001 16228.790000 1.720000
+  , Datum "Oregon" 2002 16602.540000 1.770000
+  , Datum "Oregon" 2003 16052.780000 2.140000
+  , Datum "Oregon" 2004 16383.270000 1.990000
+  , Datum "Oregon" 2005 16084.570000 2.260000
+  , Datum "Oregon" 2006 16467.910000 2.430000
+  , Datum "Oregon" 2007 16404.710000 1.840000
+  , Datum "Oregon" 2008 16273.920000 1.850000
+  , Datum "Oregon" 2009 16570.170000 1.900000
+  , Datum "Oregon" 2010 15925.950000 2.610000
+  , Datum "Oregon" 2011 16064.650000 2.080000
+  , Datum "Pennsylvania" 1979 13607.930000 3.320000
+  , Datum "Pennsylvania" 1980 14399.220000 2.580000
+  , Datum "Pennsylvania" 1981 13908.800000 2.790000
+  , Datum "Pennsylvania" 1982 14112.470000 2.650000
+  , Datum "Pennsylvania" 1983 14082.240000 3.220000
+  , Datum "Pennsylvania" 1984 13702.530000 3.150000
+  , Datum "Pennsylvania" 1985 13898.740000 2.870000
+  , Datum "Pennsylvania" 1986 14009.710000 3.000000
+  , Datum "Pennsylvania" 1987 14148.680000 2.800000
+  , Datum "Pennsylvania" 1988 14592.170000 2.470000
+  , Datum "Pennsylvania" 1989 13595.410000 3.070000
+  , Datum "Pennsylvania" 1990 13840.610000 3.450000
+  , Datum "Pennsylvania" 1991 14350.460000 2.300000
+  , Datum "Pennsylvania" 1992 13737.710000 2.780000
+  , Datum "Pennsylvania" 1993 14078.670000 3.000000
+  , Datum "Pennsylvania" 1994 14330.510000 3.130000
+  , Datum "Pennsylvania" 1995 14068.720000 2.600000
+  , Datum "Pennsylvania" 1996 13751.560000 3.810000
+  , Datum "Pennsylvania" 1997 14034.290000 2.550000
+  , Datum "Pennsylvania" 1998 14297.840000 2.650000
+  , Datum "Pennsylvania" 1999 15124.530000 2.680000
+  , Datum "Pennsylvania" 2000 14028.150000 2.700000
+  , Datum "Pennsylvania" 2001 14382.980000 2.300000
+  , Datum "Pennsylvania" 2002 14286.290000 2.940000
+  , Datum "Pennsylvania" 2003 13751.840000 3.670000
+  , Datum "Pennsylvania" 2004 14058.370000 3.650000
+  , Datum "Pennsylvania" 2005 14360.070000 2.910000
+  , Datum "Pennsylvania" 2006 14320.430000 3.210000
+  , Datum "Pennsylvania" 2007 14594.540000 2.910000
+  , Datum "Pennsylvania" 2008 14456.280000 3.250000
+  , Datum "Pennsylvania" 2009 13859.750000 2.850000
+  , Datum "Pennsylvania" 2010 14705.620000 2.840000
+  , Datum "Pennsylvania" 2011 14215.220000 4.130000
+  , Datum "Rhode Island" 1979 14650.770000 4.040000
+  , Datum "Rhode Island" 1980 15063.070000 2.710000
+  , Datum "Rhode Island" 1981 14843.970000 2.990000
+  , Datum "Rhode Island" 1982 14895.340000 3.470000
+  , Datum "Rhode Island" 1983 14868.710000 4.560000
+  , Datum "Rhode Island" 1984 14307.140000 3.640000
+  , Datum "Rhode Island" 1985 14826.110000 2.970000
+  , Datum "Rhode Island" 1986 14741.230000 3.480000
+  , Datum "Rhode Island" 1987 14841.090000 3.040000
+  , Datum "Rhode Island" 1988 15402.920000 3.070000
+  , Datum "Rhode Island" 1989 14630.150000 3.960000
+  , Datum "Rhode Island" 1990 15028.480000 3.510000
+  , Datum "Rhode Island" 1991 15255.970000 3.310000
+  , Datum "Rhode Island" 1992 14903.110000 3.540000
+  , Datum "Rhode Island" 1993 15014.800000 3.140000
+  , Datum "Rhode Island" 1994 15115.140000 3.210000
+  , Datum "Rhode Island" 1995 14803.910000 2.750000
+  , Datum "Rhode Island" 1996 14542.270000 3.930000
+  , Datum "Rhode Island" 1997 14908.310000 2.920000
+  , Datum "Rhode Island" 1998 15083.940000 3.890000
+  , Datum "Rhode Island" 1999 15635.960000 3.050000
+  , Datum "Rhode Island" 2000 14659.490000 3.280000
+  , Datum "Rhode Island" 2001 15658.870000 2.670000
+  , Datum "Rhode Island" 2002 15167.590000 3.320000
+  , Datum "Rhode Island" 2003 14732.190000 3.690000
+  , Datum "Rhode Island" 2004 15171.380000 3.350000
+  , Datum "Rhode Island" 2005 15365.960000 3.900000
+  , Datum "Rhode Island" 2006 15132.910000 3.880000
+  , Datum "Rhode Island" 2007 15697.500000 2.810000
+  , Datum "Rhode Island" 2008 15565.080000 3.880000
+  , Datum "Rhode Island" 2009 14906.310000 3.730000
+  , Datum "Rhode Island" 2010 15512.600000 3.680000
+  , Datum "Rhode Island" 2011 15557.880000 4.040000
+  , Datum "South Carolina" 1979 17040.860000 3.870000
+  , Datum "South Carolina" 1980 17692.710000 3.130000
+  , Datum "South Carolina" 1981 17849.170000 2.880000
+  , Datum "South Carolina" 1982 16545.330000 3.410000
+  , Datum "South Carolina" 1983 17246.860000 3.610000
+  , Datum "South Carolina" 1984 17330.220000 3.250000
+  , Datum "South Carolina" 1985 17258.360000 3.290000
+  , Datum "South Carolina" 1986 17077.910000 2.720000
+  , Datum "South Carolina" 1987 17054.540000 3.250000
+  , Datum "South Carolina" 1988 17696.520000 2.730000
+  , Datum "South Carolina" 1989 16591.740000 3.780000
+  , Datum "South Carolina" 1990 17701.170000 3.110000
+  , Datum "South Carolina" 1991 16593.140000 3.530000
+  , Datum "South Carolina" 1992 16641.910000 3.840000
+  , Datum "South Carolina" 1993 17254.840000 3.100000
+  , Datum "South Carolina" 1994 17031.930000 3.860000
+  , Datum "South Carolina" 1995 17180.360000 3.770000
+  , Datum "South Carolina" 1996 17229.760000 3.150000
+  , Datum "South Carolina" 1997 16878.700000 3.690000
+  , Datum "South Carolina" 1998 17421.840000 3.700000
+  , Datum "South Carolina" 1999 17861.930000 3.060000
+  , Datum "South Carolina" 2000 17567.780000 2.880000
+  , Datum "South Carolina" 2001 17450.900000 2.400000
+  , Datum "South Carolina" 2002 17048.080000 3.280000
+  , Datum "South Carolina" 2003 16853.060000 3.950000
+  , Datum "South Carolina" 2004 17190.900000 3.160000
+  , Datum "South Carolina" 2005 17208.750000 3.490000
+  , Datum "South Carolina" 2006 17892.630000 3.200000
+  , Datum "South Carolina" 2007 18204.090000 2.420000
+  , Datum "South Carolina" 2008 18230.210000 3.220000
+  , Datum "South Carolina" 2009 17319.650000 3.640000
+  , Datum "South Carolina" 2010 18188.460000 3.050000
+  , Datum "South Carolina" 2011 18630.890000 2.820000
+  , Datum "South Dakota" 1979 14890.630000 1.270000
+  , Datum "South Dakota" 1980 15324.520000 1.020000
+  , Datum "South Dakota" 1981 15212.640000 1.200000
+  , Datum "South Dakota" 1982 14928.000000 1.730000
+  , Datum "South Dakota" 1983 15097.470000 1.340000
+  , Datum "South Dakota" 1984 14976.060000 1.450000
+  , Datum "South Dakota" 1985 15170.880000 1.280000
+  , Datum "South Dakota" 1986 15190.270000 1.740000
+  , Datum "South Dakota" 1987 15052.460000 1.200000
+  , Datum "South Dakota" 1988 15652.470000 1.050000
+  , Datum "South Dakota" 1989 15290.330000 1.120000
+  , Datum "South Dakota" 1990 15201.230000 1.200000
+  , Datum "South Dakota" 1991 15085.600000 1.470000
+  , Datum "South Dakota" 1992 14805.740000 1.390000
+  , Datum "South Dakota" 1993 14595.970000 1.810000
+  , Datum "South Dakota" 1994 15258.740000 1.310000
+  , Datum "South Dakota" 1995 14509.700000 1.800000
+  , Datum "South Dakota" 1996 14905.930000 1.620000
+  , Datum "South Dakota" 1997 15007.900000 1.480000
+  , Datum "South Dakota" 1998 14880.060000 1.760000
+  , Datum "South Dakota" 1999 15203.140000 1.550000
+  , Datum "South Dakota" 2000 15209.690000 1.320000
+  , Datum "South Dakota" 2001 15160.780000 1.390000
+  , Datum "South Dakota" 2002 14990.060000 1.000000
+  , Datum "South Dakota" 2003 15068.240000 1.140000
+  , Datum "South Dakota" 2004 15078.190000 1.370000
+  , Datum "South Dakota" 2005 15073.580000 1.450000
+  , Datum "South Dakota" 2006 15320.610000 1.150000
+  , Datum "South Dakota" 2007 15374.590000 1.610000
+  , Datum "South Dakota" 2008 15257.800000 1.640000
+  , Datum "South Dakota" 2009 14873.920000 1.560000
+  , Datum "South Dakota" 2010 15209.930000 1.740000
+  , Datum "South Dakota" 2011 15166.940000 1.560000
+  , Datum "Tennessee" 1979 15532.300000 4.520000
+  , Datum "Tennessee" 1980 16396.840000 3.110000
+  , Datum "Tennessee" 1981 15639.030000 3.300000
+  , Datum "Tennessee" 1982 15260.840000 4.010000
+  , Datum "Tennessee" 1983 15661.860000 3.850000
+  , Datum "Tennessee" 1984 15486.600000 3.890000
+  , Datum "Tennessee" 1985 15414.110000 3.020000
+  , Datum "Tennessee" 1986 15704.560000 3.140000
+  , Datum "Tennessee" 1987 15650.980000 3.000000
+  , Datum "Tennessee" 1988 16407.780000 3.260000
+  , Datum "Tennessee" 1989 15162.320000 4.560000
+  , Datum "Tennessee" 1990 15778.440000 4.210000
+  , Datum "Tennessee" 1991 14993.520000 4.180000
+  , Datum "Tennessee" 1992 15428.000000 3.130000
+  , Datum "Tennessee" 1993 15490.840000 3.080000
+  , Datum "Tennessee" 1994 15776.100000 3.990000
+  , Datum "Tennessee" 1995 16039.840000 3.320000
+  , Datum "Tennessee" 1996 15709.280000 3.840000
+  , Datum "Tennessee" 1997 15525.200000 3.550000
+  , Datum "Tennessee" 1998 15667.140000 3.680000
+  , Datum "Tennessee" 1999 16479.290000 2.890000
+  , Datum "Tennessee" 2000 16333.370000 2.770000
+  , Datum "Tennessee" 2001 15972.180000 3.450000
+  , Datum "Tennessee" 2002 15242.110000 3.890000
+  , Datum "Tennessee" 2003 15814.090000 4.020000
+  , Datum "Tennessee" 2004 15653.170000 4.020000
+  , Datum "Tennessee" 2005 16094.450000 2.960000
+  , Datum "Tennessee" 2006 16397.760000 3.280000
+  , Datum "Tennessee" 2007 16648.090000 2.400000
+  , Datum "Tennessee" 2008 16381.810000 3.240000
+  , Datum "Tennessee" 2009 15401.340000 4.080000
+  , Datum "Tennessee" 2010 16134.340000 3.340000
+  , Datum "Tennessee" 2011 16414.930000 4.180000
+  , Datum "Texas" 1979 18405.380000 2.040000
+  , Datum "Texas" 1980 18785.290000 1.630000
+  , Datum "Texas" 1981 18057.170000 2.150000
+  , Datum "Texas" 1982 18237.350000 1.830000
+  , Datum "Texas" 1983 18342.020000 1.750000
+  , Datum "Texas" 1984 18286.430000 1.790000
+  , Datum "Texas" 1985 18218.970000 2.010000
+  , Datum "Texas" 1986 17868.590000 2.280000
+  , Datum "Texas" 1987 18107.960000 2.080000
+  , Datum "Texas" 1988 18309.450000 1.420000
+  , Datum "Texas" 1989 18282.390000 1.700000
+  , Datum "Texas" 1990 18093.830000 2.120000
+  , Datum "Texas" 1991 17634.930000 2.530000
+  , Datum "Texas" 1992 18105.150000 2.340000
+  , Datum "Texas" 1993 18244.020000 1.890000
+  , Datum "Texas" 1994 18116.410000 2.040000
+  , Datum "Texas" 1995 18141.570000 1.940000
+  , Datum "Texas" 1996 18495.300000 1.750000
+  , Datum "Texas" 1997 17817.490000 2.310000
+  , Datum "Texas" 1998 18493.530000 1.880000
+  , Datum "Texas" 1999 18717.750000 1.490000
+  , Datum "Texas" 2000 18634.760000 1.820000
+  , Datum "Texas" 2001 18189.520000 1.900000
+  , Datum "Texas" 2002 17962.910000 2.230000
+  , Datum "Texas" 2003 18513.750000 1.750000
+  , Datum "Texas" 2004 18197.060000 2.830000
+  , Datum "Texas" 2005 18601.970000 1.580000
+  , Datum "Texas" 2006 18862.960000 1.780000
+  , Datum "Texas" 2007 17999.030000 2.520000
+  , Datum "Texas" 2008 18857.410000 1.850000
+  , Datum "Texas" 2009 18920.140000 1.990000
+  , Datum "Texas" 2010 18762.590000 1.930000
+  , Datum "Texas" 2011 19779.580000 1.000000
+  , Datum "Utah" 1979 17762.560000 0.800000
+  , Datum "Utah" 1980 17507.670000 1.200000
+  , Datum "Utah" 1981 17387.080000 1.050000
+  , Datum "Utah" 1982 17280.660000 1.180000
+  , Datum "Utah" 1983 16996.560000 1.400000
+  , Datum "Utah" 1984 17292.110000 1.060000
+  , Datum "Utah" 1985 17686.830000 1.020000
+  , Datum "Utah" 1986 17450.030000 1.040000
+  , Datum "Utah" 1987 17583.600000 1.050000
+  , Datum "Utah" 1988 17769.070000 0.760000
+  , Datum "Utah" 1989 17848.400000 0.610000
+  , Datum "Utah" 1990 17417.500000 0.830000
+  , Datum "Utah" 1991 17360.470000 0.930000
+  , Datum "Utah" 1992 17595.240000 0.950000
+  , Datum "Utah" 1993 17451.910000 1.140000
+  , Datum "Utah" 1994 17565.700000 0.930000
+  , Datum "Utah" 1995 17337.370000 1.110000
+  , Datum "Utah" 1996 17531.220000 0.980000
+  , Datum "Utah" 1997 17224.960000 1.140000
+  , Datum "Utah" 1998 17155.440000 1.180000
+  , Datum "Utah" 1999 17562.720000 0.770000
+  , Datum "Utah" 2000 17534.630000 0.830000
+  , Datum "Utah" 2001 17667.310000 0.720000
+  , Datum "Utah" 2002 17822.850000 0.610000
+  , Datum "Utah" 2003 17573.930000 0.810000
+  , Datum "Utah" 2004 17519.250000 1.030000
+  , Datum "Utah" 2005 17481.790000 1.140000
+  , Datum "Utah" 2006 17723.350000 0.990000
+  , Datum "Utah" 2007 17701.460000 0.850000
+  , Datum "Utah" 2008 17668.720000 0.790000
+  , Datum "Utah" 2009 17511.360000 0.830000
+  , Datum "Utah" 2010 17411.540000 1.150000
+  , Datum "Utah" 2011 17472.510000 0.970000
+  , Datum "Vermont" 1979 13581.530000 3.010000
+  , Datum "Vermont" 1980 13176.250000 2.460000
+  , Datum "Vermont" 1981 12998.020000 3.300000
+  , Datum "Vermont" 1982 13561.400000 2.590000
+  , Datum "Vermont" 1983 13254.020000 3.770000
+  , Datum "Vermont" 1984 13017.720000 3.020000
+  , Datum "Vermont" 1985 13099.640000 2.690000
+  , Datum "Vermont" 1986 13083.420000 3.180000
+  , Datum "Vermont" 1987 13240.580000 2.890000
+  , Datum "Vermont" 1988 13206.130000 2.610000
+  , Datum "Vermont" 1989 12979.660000 3.140000
+  , Datum "Vermont" 1990 13266.480000 3.790000
+  , Datum "Vermont" 1991 13792.840000 2.870000
+  , Datum "Vermont" 1992 13444.240000 2.700000
+  , Datum "Vermont" 1993 13291.600000 2.910000
+  , Datum "Vermont" 1994 13548.110000 2.950000
+  , Datum "Vermont" 1995 13469.190000 2.930000
+  , Datum "Vermont" 1996 13127.440000 3.760000
+  , Datum "Vermont" 1997 13323.410000 2.920000
+  , Datum "Vermont" 1998 13553.810000 3.350000
+  , Datum "Vermont" 1999 14115.430000 2.920000
+  , Datum "Vermont" 2000 13052.080000 3.330000
+  , Datum "Vermont" 2001 14301.430000 2.290000
+  , Datum "Vermont" 2002 13446.980000 3.260000
+  , Datum "Vermont" 2003 13533.670000 3.460000
+  , Datum "Vermont" 2004 13736.680000 2.940000
+  , Datum "Vermont" 2005 14050.660000 3.620000
+  , Datum "Vermont" 2006 13116.970000 3.680000
+  , Datum "Vermont" 2007 14017.250000 3.190000
+  , Datum "Vermont" 2008 13820.200000 3.880000
+  , Datum "Vermont" 2009 13693.180000 3.120000
+  , Datum "Vermont" 2010 13857.200000 3.380000
+  , Datum "Vermont" 2011 13854.560000 3.980000
+  , Datum "Virginia" 1979 15157.000000 3.860000
+  , Datum "Virginia" 1980 16005.140000 2.500000
+  , Datum "Virginia" 1981 15789.370000 2.550000
+  , Datum "Virginia" 1982 15625.840000 3.100000
+  , Datum "Virginia" 1983 15828.620000 3.210000
+  , Datum "Virginia" 1984 15422.760000 3.110000
+  , Datum "Virginia" 1985 15716.640000 3.000000
+  , Datum "Virginia" 1986 15723.030000 2.430000
+  , Datum "Virginia" 1987 15742.950000 3.110000
+  , Datum "Virginia" 1988 16277.050000 2.420000
+  , Datum "Virginia" 1989 15112.270000 3.670000
+  , Datum "Virginia" 1990 15975.990000 3.120000
+  , Datum "Virginia" 1991 15765.750000 2.690000
+  , Datum "Virginia" 1992 15206.310000 3.050000
+  , Datum "Virginia" 1993 15822.220000 3.080000
+  , Datum "Virginia" 1994 15721.290000 3.070000
+  , Datum "Virginia" 1995 15683.050000 2.960000
+  , Datum "Virginia" 1996 15401.890000 3.750000
+  , Datum "Virginia" 1997 15716.560000 2.590000
+  , Datum "Virginia" 1998 15572.900000 3.150000
+  , Datum "Virginia" 1999 16429.040000 2.880000
+  , Datum "Virginia" 2000 15967.340000 2.740000
+  , Datum "Virginia" 2001 16194.630000 2.370000
+  , Datum "Virginia" 2002 15789.990000 2.970000
+  , Datum "Virginia" 2003 15398.540000 4.380000
+  , Datum "Virginia" 2004 15613.780000 3.400000
+  , Datum "Virginia" 2005 15831.140000 2.790000
+  , Datum "Virginia" 2006 16263.220000 3.210000
+  , Datum "Virginia" 2007 16634.940000 2.350000
+  , Datum "Virginia" 2008 16466.890000 2.880000
+  , Datum "Virginia" 2009 15372.070000 3.570000
+  , Datum "Virginia" 2010 16662.540000 2.870000
+  , Datum "Virginia" 2011 16462.420000 3.240000
+  , Datum "Washington" 1979 14946.280000 2.750000
+  , Datum "Washington" 1980 14254.360000 3.230000
+  , Datum "Washington" 1981 14456.420000 3.230000
+  , Datum "Washington" 1982 14595.330000 3.370000
+  , Datum "Washington" 1983 14445.920000 3.720000
+  , Datum "Washington" 1984 14077.470000 3.280000
+  , Datum "Washington" 1985 15026.990000 2.090000
+  , Datum "Washington" 1986 14629.590000 2.980000
+  , Datum "Washington" 1987 15187.890000 2.460000
+  , Datum "Washington" 1988 14586.340000 2.830000
+  , Datum "Washington" 1989 14516.760000 2.650000
+  , Datum "Washington" 1990 14424.150000 3.590000
+  , Datum "Washington" 1991 14652.830000 2.890000
+  , Datum "Washington" 1992 14973.250000 2.640000
+  , Datum "Washington" 1993 14475.880000 2.450000
+  , Datum "Washington" 1994 14948.460000 2.980000
+  , Datum "Washington" 1995 14632.860000 3.640000
+  , Datum "Washington" 1996 14297.820000 3.720000
+  , Datum "Washington" 1997 14159.750000 3.320000
+  , Datum "Washington" 1998 14601.030000 3.160000
+  , Datum "Washington" 1999 14151.820000 2.940000
+  , Datum "Washington" 2000 14776.980000 2.240000
+  , Datum "Washington" 2001 14638.660000 2.530000
+  , Datum "Washington" 2002 14992.720000 2.450000
+  , Datum "Washington" 2003 14770.770000 2.970000
+  , Datum "Washington" 2004 14818.770000 2.490000
+  , Datum "Washington" 2005 14686.890000 2.640000
+  , Datum "Washington" 2006 15084.340000 3.380000
+  , Datum "Washington" 2007 14629.550000 2.390000
+  , Datum "Washington" 2008 14599.950000 2.330000
+  , Datum "Washington" 2009 15368.400000 2.620000
+  , Datum "Washington" 2010 14476.140000 3.180000
+  , Datum "Washington" 2011 14423.600000 2.940000
+  , Datum "West Virginia" 1979 14006.560000 3.600000
+  , Datum "West Virginia" 1980 14812.800000 3.040000
+  , Datum "West Virginia" 1981 14559.730000 2.910000
+  , Datum "West Virginia" 1982 14545.940000 3.030000
+  , Datum "West Virginia" 1983 14583.240000 3.090000
+  , Datum "West Virginia" 1984 14165.040000 3.090000
+  , Datum "West Virginia" 1985 14531.090000 3.070000
+  , Datum "West Virginia" 1986 14693.910000 2.970000
+  , Datum "West Virginia" 1987 14674.320000 2.710000
+  , Datum "West Virginia" 1988 15295.550000 2.430000
+  , Datum "West Virginia" 1989 14036.630000 3.780000
+  , Datum "West Virginia" 1990 14665.120000 3.410000
+  , Datum "West Virginia" 1991 14592.140000 2.900000
+  , Datum "West Virginia" 1992 14178.040000 2.710000
+  , Datum "West Virginia" 1993 14582.560000 2.600000
+  , Datum "West Virginia" 1994 14815.510000 3.080000
+  , Datum "West Virginia" 1995 14420.870000 2.870000
+  , Datum "West Virginia" 1996 14232.020000 3.710000
+  , Datum "West Virginia" 1997 14503.340000 2.620000
+  , Datum "West Virginia" 1998 14519.760000 2.990000
+  , Datum "West Virginia" 1999 15579.310000 2.290000
+  , Datum "West Virginia" 2000 14782.650000 2.730000
+  , Datum "West Virginia" 2001 14864.520000 2.770000
+  , Datum "West Virginia" 2002 14538.870000 3.340000
+  , Datum "West Virginia" 2003 14318.770000 4.110000
+  , Datum "West Virginia" 2004 14473.570000 3.670000
+  , Datum "West Virginia" 2005 14702.280000 2.980000
+  , Datum "West Virginia" 2006 14844.610000 3.010000
+  , Datum "West Virginia" 2007 15243.780000 2.850000
+  , Datum "West Virginia" 2008 14973.900000 3.300000
+  , Datum "West Virginia" 2009 14030.150000 3.330000
+  , Datum "West Virginia" 2010 15346.150000 2.950000
+  , Datum "West Virginia" 2011 14831.690000 3.760000
+  , Datum "Wisconsin" 1979 14085.940000 2.220000
+  , Datum "Wisconsin" 1980 14257.480000 2.290000
+  , Datum "Wisconsin" 1981 14018.060000 2.150000
+  , Datum "Wisconsin" 1982 14012.020000 2.530000
+  , Datum "Wisconsin" 1983 13937.060000 2.400000
+  , Datum "Wisconsin" 1984 13938.000000 2.410000
+  , Datum "Wisconsin" 1985 13936.800000 2.530000
+  , Datum "Wisconsin" 1986 14149.030000 2.430000
+  , Datum "Wisconsin" 1987 14151.010000 1.970000
+  , Datum "Wisconsin" 1988 14819.220000 1.770000
+  , Datum "Wisconsin" 1989 14065.040000 1.680000
+  , Datum "Wisconsin" 1990 13929.280000 2.480000
+  , Datum "Wisconsin" 1991 13868.800000 2.660000
+  , Datum "Wisconsin" 1992 13802.870000 2.220000
+  , Datum "Wisconsin" 1993 13546.170000 2.550000
+  , Datum "Wisconsin" 1994 14354.380000 2.230000
+  , Datum "Wisconsin" 1995 13548.860000 2.390000
+  , Datum "Wisconsin" 1996 14011.740000 2.380000
+  , Datum "Wisconsin" 1997 13842.010000 2.070000
+  , Datum "Wisconsin" 1998 14400.920000 2.330000
+  , Datum "Wisconsin" 1999 14469.210000 2.450000
+  , Datum "Wisconsin" 2000 14119.390000 2.380000
+  , Datum "Wisconsin" 2001 14125.640000 2.470000
+  , Datum "Wisconsin" 2002 13976.860000 2.600000
+  , Datum "Wisconsin" 2003 14654.250000 2.050000
+  , Datum "Wisconsin" 2004 14048.290000 2.530000
+  , Datum "Wisconsin" 2005 14597.480000 2.090000
+  , Datum "Wisconsin" 2006 14627.980000 2.230000
+  , Datum "Wisconsin" 2007 14883.030000 2.350000
+  , Datum "Wisconsin" 2008 14531.250000 2.270000
+  , Datum "Wisconsin" 2009 13983.530000 2.150000
+  , Datum "Wisconsin" 2010 14875.830000 2.770000
+  , Datum "Wisconsin" 2011 14446.510000 2.250000
+  , Datum "Wyoming" 1979 16432.550000 0.850000
+  , Datum "Wyoming" 1980 16316.600000 1.080000
+  , Datum "Wyoming" 1981 16255.730000 1.090000
+  , Datum "Wyoming" 1982 16087.200000 1.320000
+  , Datum "Wyoming" 1983 16121.760000 1.290000
+  , Datum "Wyoming" 1984 16184.960000 1.030000
+  , Datum "Wyoming" 1985 16559.450000 0.970000
+  , Datum "Wyoming" 1986 16394.050000 1.210000
+  , Datum "Wyoming" 1987 16529.110000 1.070000
+  , Datum "Wyoming" 1988 16570.260000 0.740000
+  , Datum "Wyoming" 1989 16334.260000 0.980000
+  , Datum "Wyoming" 1990 16197.960000 1.020000
+  , Datum "Wyoming" 1991 16193.900000 1.160000
+  , Datum "Wyoming" 1992 16383.780000 1.050000
+  , Datum "Wyoming" 1993 16040.690000 1.310000
+  , Datum "Wyoming" 1994 16387.210000 0.960000
+  , Datum "Wyoming" 1995 16008.260000 1.430000
+  , Datum "Wyoming" 1996 16194.060000 1.230000
+  , Datum "Wyoming" 1997 16110.060000 1.310000
+  , Datum "Wyoming" 1998 16223.570000 1.380000
+  , Datum "Wyoming" 1999 16378.040000 1.180000
+  , Datum "Wyoming" 2000 16244.770000 1.150000
+  , Datum "Wyoming" 2001 16496.470000 0.970000
+  , Datum "Wyoming" 2002 16360.810000 1.010000
+  , Datum "Wyoming" 2003 16179.520000 1.200000
+  , Datum "Wyoming" 2004 15987.800000 1.180000
+  , Datum "Wyoming" 2005 16253.320000 1.250000
+  , Datum "Wyoming" 2006 16495.930000 1.010000
+  , Datum "Wyoming" 2007 16412.700000 1.160000
+  , Datum "Wyoming" 2008 16221.380000 1.180000
+  , Datum "Wyoming" 2009 16070.170000 1.270000
+  , Datum "Wyoming" 2010 16252.890000 1.220000
+  , Datum "Wyoming" 2011 16239.010000 1.320000
+  ] 
