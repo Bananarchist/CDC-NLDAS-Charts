@@ -6,5 +6,5 @@ You might have to run `elm install` after cloning, or maybe it does it automagic
 
 ## To do
 * Add precipitation data
-* Better controls
+* Better controls - create US Map Selector component
 * Move to different plotting library for MOAR CHAART POWAHR
