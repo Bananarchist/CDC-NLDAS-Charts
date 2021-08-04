@@ -5,6 +5,6 @@ A reimaging of CDC weather data, as suggested (sort of) by the Elm Guide. I thou
 You might have to run `elm install` after cloning, or maybe it does it automagically, but you can use `elm reactor` to view, or `elm make src/Main.elm`
 
 ## To do
-* Add precipitation data
-* Better controls - create US Map Selector component
-* Move to different plotting library for MOAR CHAART POWAHR
+* Better controls - make double slider for year selection
+* Better viz - can't tell which graph line is for which state, would be nice to see exact plot point values
+* Better state selector - on some screens it will be hard to pick Rhode Island and other less important states
