@@ -1,0 +1,26 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>State Sunlight Data</title>
+  <link rel=stylesheet href=main.css />
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Sunlight Data 1973-2011</h1>
+    <p>Using data from the CDC, this page graphs recorded sunlight exposure in KJ/m^2</p>
+  </header>
+  <div id="myapp"></div>
+  <script>
+    var app = Elm.Main.init({
+      node: document.getElementById('myapp'),
+    });
+  </script>
+  <footer>
+    Copyright BANANARCHIST 2021, data from CDC
+  </footer>
+</body>
+
+</html>

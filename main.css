@@ -1,0 +1,32 @@
+.unselected:hover {
+  fill: green;
+}
+.selected {
+  fill: blue;
+}
+
+#control-panel {
+  flex: 1 1 40%;
+}
+
+#viz-view {
+  flex: 1 1 auto;
+}
+
+main {
+  display: flex;
+}
+
+fieldset {
+  display: flex;
+  border-radius: 1em;
+}
+
+input[type="number"] {
+  flex: 1 1 auto;
+  border: none;
+}
+
+input[type="number"]:last-of-type {
+  text-align: right;
+}
