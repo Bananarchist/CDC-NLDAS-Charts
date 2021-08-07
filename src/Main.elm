@@ -5,6 +5,7 @@ import Basics.Extra exposing (flip)
 import Browser
 import Color exposing (Color)
 import Data exposing (Datum, stateData)
+import DoubleSlider as DoubleSlider
 import Html as Tag
 import Html.Attributes as Hats exposing (id)
 import Html.Events as Ev
@@ -123,6 +124,15 @@ controlPanelView model =
     Tag.section [ id "control-panel" ]
         [ stateSelectorView model
         , yearInput model
+        , DoubleSlider.view 
+          { max = 2011
+          , min = 1973
+          , step = 1
+          , val1 = floor model.startYear
+          , val2 = floor model.endYear
+          , updateMin = UpdateStartYear
+          , updateMax = UpdateEndYear
+          } 
         ]
 
 
