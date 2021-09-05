@@ -1,8 +1,13 @@
 .unselected:hover {
   fill: green;
+  cursor: pointer;
 }
 .selected {
   fill: blue;
+}
+
+.selected:hover {
+  cursor: no-drop;
 }
 
 #control-panel {
@@ -18,15 +23,25 @@ main {
 }
 
 fieldset {
+  position: relative;
   display: flex;
   border-radius: 1em;
+  padding: 0.5em;
 }
 
 input[type="number"] {
   flex: 1 1 auto;
   border: none;
+  text-align: right;
 }
 
 input[type="number"]:last-of-type {
-  text-align: right;
+  text-align: left;
+  margin-left: 1em;
+}
+
+label {
+  position: relative;
+  top: -1.25rem;
+  left: 25%;
 }

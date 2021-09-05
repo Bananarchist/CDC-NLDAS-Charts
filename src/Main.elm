@@ -40,8 +40,7 @@ type alias Model =
 
 
 type Msg
-    = UpdateStates (List String)
-    | UpdateStartYear Int
+    = UpdateStartYear Int
     | UpdateEndYear Int
     | SelectState String
     | RemoveState String
@@ -66,10 +65,6 @@ withoutCmd model =
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        UpdateStates newStates ->
-            { model | selectedStates = newStates }
-                |> withoutCmd
-
         UpdateStartYear year ->
             { model | startYear = toFloat year }
                 |> withoutCmd
@@ -131,7 +126,7 @@ yearInput model =
     Tag.fieldset []
         [ Tag.input
             [ Hats.type_ "number"
-            , Hats.min "1973"
+            , Hats.min "1979"
             , Hats.max "2010"
             , Hats.value (String.fromFloat model.startYear)
             , Ev.onInput (String.toInt >> Maybe.withDefault 1973 >> UpdateStartYear)
@@ -140,7 +135,7 @@ yearInput model =
         , Tag.text "-"
         , Tag.input
             [ Hats.type_ "number"
-            , Hats.min "1974"
+            , Hats.min "1980"
             , Hats.max "2011"
             , Hats.value (String.fromFloat model.endYear)
             , Ev.onInput (String.toInt >> Maybe.withDefault 2011 >> UpdateEndYear)
@@ -151,23 +146,10 @@ yearInput model =
 
 stateSelectorView : Model -> Tag.Html Msg
 stateSelectorView model =
-    let
-        opt =
-            stateDatumOptionView model
-    in
     svg
         [ viewBox 0 0 1200 1000
         ]
         [ USA.states model.selectedStates SelectState RemoveState ]
-
-
-stateDatumOptionView : Model -> Datum -> Tag.Html Msg
-stateDatumOptionView model datum =
-    Tag.option
-        [ Hats.value datum.state
-        , Hats.selected (List.any ((==) datum.state) model.selectedStates)
-        ]
-        [ Tag.text datum.state ]
 
 
 w : Float
